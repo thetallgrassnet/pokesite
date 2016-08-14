@@ -1,0 +1,11 @@
+language: ruby
+addons:
+  postgresql: '9.5'
+bundler_args: "--without development"
+before_script:
+- cp config/database.travis.yml config/database.yml
+- bin/rake db:setup
+script: bin/rspec
+notifications:
+  slack:
+    secure: ECe3Q1nDfQQK7mufVOd5HA47G2Q6MJDL40rS7ldDwPOl0FQCegHWk3/7aZ+3tMbe3HfaTgAitAumIw+6ENdr9uK3TXLOZtHtNFZnFwfr9g4Ijt4w1dZvr8AqhNNAqcJBS39SlFEf8Xp2qY2q1qPhQ2sMgr0/8LCmqTYCNNjtBBSJVpyjmoNHcRuRh86w5WNdoh1tGO6GyD1SEvQWJgIdgxlSLrovuzmN+1/UnH+QCE6+W5iAbataPPAywpv0KXUVyFTuTCITeAdwYG3/kCpzWmD1FQa+Ixc+3DiVeE2wB2argJE84CXzmFfLxDzRjRC1RjY8YH1i6dWuk++6il4RzOSq8IkBsrqF6jW4uLV5wGQcAYYtfaFyE972gpiITqYDT9TuyZBecb/x2YYk0Gp2KJOcR0zq+zFfDJYyAiaaKWD9P+t+90xEq0CpTHk6yymRVWl29TuYPHpLBRJTMKvE23hlQraXIVa9tofuz07IdSoQ7lA7pEj3Y6e23IT0GGQrqxeUISwS2ocJaH10sZIxdzd/MDjHYmXksiOhg1KIIXiC6vkglz7/GkRo3H2d9Z8gWGhE1uYvcsOh5FwUKVr4cySLyuUykB7UTz/I2bq47Gvgh5oHZRUiRvHyOBll6+B9VRl1ptKsrTuL1cI1bltaiXt6cv02ljpRxBuHc5OQo64=
