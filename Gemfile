@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
-
 ruby '2.3.1'
+
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -30,6 +31,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'devise', '~> 4.2.0'
+gem 'paper_trail', '~> 5.2.0'
+gem 'pundit', '~> 1.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
