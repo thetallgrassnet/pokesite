@@ -6,17 +6,19 @@ ActiveAdmin.register AdminUser do
     id_column
     column :name
     column :email
-    column :current_sign_in_at
-    column :sign_in_count
+    column :superuser
     column :created_at
+    column :sign_in_count
+    column :current_sign_in_at
     actions
   end
 
   filter :name
   filter :email
-  filter :current_sign_in_at
-  filter :sign_in_count
+  filter :superuser
   filter :created_at
+  filter :sign_in_count
+  filter :current_sign_in_at
 
   form do |f|
     f.inputs "Admin Details" do
