@@ -7,4 +7,8 @@ class AdminUser < ApplicationRecord
   has_paper_trail
 
   validates :name, presence: true, uniqueness: true
+
+  def to_s
+    name
+  end
 end

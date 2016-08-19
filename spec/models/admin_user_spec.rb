@@ -26,4 +26,11 @@ RSpec.describe AdminUser, type: :model do
       it { is_expected.to_not be_valid }
     end
   end
+
+  describe '#to_s' do
+    let!(:user) { FactoryGirl.build(:admin_user) }
+    subject { user.to_s }
+
+    it { is_expected.to eql(user.name) }
+  end
 end
