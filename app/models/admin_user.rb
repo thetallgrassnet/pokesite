@@ -1,6 +1,8 @@
 class AdminUser < ApplicationRecord
   extend FriendlyId
 
+  has_and_belongs_to_many :article_columns, class_name: 'Article::Column'
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
