@@ -101,4 +101,6 @@ ActiveRecord::Schema.define(version: 20160820051034) do
     t.index ["transaction_id"], name: "index_versions_on_transaction_id", using: :btree
   end
 
+  add_foreign_key "admin_users_article_columns", "admin_users"
+  add_foreign_key "admin_users_article_columns", "article_columns", column: "column_id"
 end
