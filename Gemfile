@@ -39,6 +39,7 @@ gem 'paper_trail', '~> 5.2.0'
 gem 'pundit', '~> 1.1.0'
 gem 'friendly_id', github: 'norman/friendly_id'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick', '~> 4.5.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
