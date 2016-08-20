@@ -8,5 +8,9 @@ FactoryGirl.define do
     trait :superuser do
       superuser true
     end
+
+    trait :author do
+      columns { create_list(:article_column) }
+    end
   end
 end
