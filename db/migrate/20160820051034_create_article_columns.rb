@@ -11,9 +11,9 @@ class CreateArticleColumns < ActiveRecord::Migration[5.0]
 
     create_table :admin_users_article_columns, id: false do |t|
       t.belongs_to :admin_user, index: true
-      t.belongs_to :article_column, index: true
+      t.belongs_to :column, index: true
     end
-    add_index :admin_users_article_columns, [:admin_user_id, :article_column_id],
+    add_index :admin_users_article_columns, [:admin_user_id, :column_id],
       name: :index_admin_users_columns_on_user_id_and_column_id, unique: true
   end
 end

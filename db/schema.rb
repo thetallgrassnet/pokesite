@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 20160820051034) do
 
   create_table "admin_users_article_columns", id: false, force: :cascade do |t|
     t.integer "admin_user_id"
-    t.integer "article_column_id"
-    t.index ["admin_user_id", "article_column_id"], name: "index_admin_users_columns_on_user_id_and_column_id", unique: true, using: :btree
+    t.integer "column_id"
+    t.index ["admin_user_id", "column_id"], name: "index_admin_users_columns_on_user_id_and_column_id", unique: true, using: :btree
     t.index ["admin_user_id"], name: "index_admin_users_article_columns_on_admin_user_id", using: :btree
-    t.index ["article_column_id"], name: "index_admin_users_article_columns_on_article_column_id", using: :btree
+    t.index ["column_id"], name: "index_admin_users_article_columns_on_column_id", using: :btree
   end
 
   create_table "article_columns", force: :cascade do |t|
