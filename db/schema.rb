@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160820051034) do
+ActiveRecord::Schema.define(version: 20160820142107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,22 @@ ActiveRecord::Schema.define(version: 20160820051034) do
     t.index ["slug"], name: "index_article_columns_on_slug", unique: true, using: :btree
   end
 
+  create_table "article_posts", force: :cascade do |t|
+    t.string   "headline"
+    t.string   "slug"
+    t.string   "subhead"
+    t.text     "body"
+    t.datetime "published_at"
+    t.boolean  "featured",     default: false
+    t.integer  "column_id"
+    t.integer  "author_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["author_id"], name: "index_article_posts_on_author_id", using: :btree
+    t.index ["column_id"], name: "index_article_posts_on_column_id", using: :btree
+    t.index ["slug"], name: "index_article_posts_on_slug", unique: true, using: :btree
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -103,4 +119,6 @@ ActiveRecord::Schema.define(version: 20160820051034) do
 
   add_foreign_key "admin_users_article_columns", "admin_users"
   add_foreign_key "admin_users_article_columns", "article_columns", column: "column_id"
+  add_foreign_key "article_posts", "admin_users", column: "author_id"
+  add_foreign_key "article_posts", "article_columns", column: "column_id"
 end

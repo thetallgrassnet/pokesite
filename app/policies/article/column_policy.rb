@@ -11,10 +11,6 @@ class Article::ColumnPolicy < ApplicationPolicy
     user.superuser?
   end
 
-  def destroy_all?
-    false
-  end
-
   class Scope < Scope
     def resolve
       scope

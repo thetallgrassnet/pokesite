@@ -10,13 +10,13 @@ RSpec.describe Article::Column, type: :model do
 
     context 'when missing' do
       before { subject.assign_attributes(name: nil) }
-      it     { is_expected.to_not be_valid }
+      it     { is_expected.not_to be_valid }
     end
 
     context 'when not unique' do
       let!(:column) { FactoryGirl.create(:article_column) }
       before        { subject.assign_attributes(name: column.name) }
-      it            { is_expected.to_not be_valid }
+      it            { is_expected.not_to be_valid }
     end
   end
 

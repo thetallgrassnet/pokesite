@@ -11,10 +11,6 @@ class AdminUserPolicy < ApplicationPolicy
     user.superuser? and not record == user
   end
 
-  def destroy_all?
-    false
-  end
-
   class Scope < Scope
     def resolve
       scope
