@@ -4,7 +4,7 @@ FactoryGirl.define do
     subhead { headline }
     body { "This is #{headline}" }
     column { create(:article_column) }
-    author { create(:admin_user) }
+    author { create(:admin_user, article_columns: [column]) }
 
     trait :published do
       published_at (1..10).to_a.sample.days.ago
