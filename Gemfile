@@ -32,12 +32,17 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'envied', github: 'monterail/envied'
+
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise', '~> 4.2.0'
 gem 'paper_trail', '~> 5.2.0'
 gem 'pundit', '~> 1.1.0'
 gem 'friendly_id', github: 'norman/friendly_id'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick', '~> 4.5.1'
+gem 'fog-aws', '~> 0.11'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

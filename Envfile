@@ -1,0 +1,9 @@
+enable_defaults! { ENV['RACK_ENV'] != 'production' }
+
+group :production do
+  variable :AWS_ACCESS_KEY_ID
+  variable :AWS_REGION
+  variable :AWS_S3_BUCKET
+  variable :AWS_SECRET_ACCESS_KEY
+  variable :SECRET_KEY_BASE
+end
