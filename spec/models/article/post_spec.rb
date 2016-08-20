@@ -9,7 +9,7 @@ RSpec.describe Article::Post, type: :model do
     subject { Article::Post.published }
 
     it { is_expected.to     include(published_post) }
-    it { is_expected.to_not include(future_post, unpublished_post) }
+    it { is_expected.not_to include(future_post, unpublished_post) }
   end
 
   describe '.featured' do
@@ -21,7 +21,7 @@ RSpec.describe Article::Post, type: :model do
     subject { Article::Post.featured }
 
     it { is_expected.to     include(featured_post) }
-    it { is_expected.to_not include(future_featured_post, unpublished_featured_post, unfeatured_post) }
+    it { is_expected.not_to include(future_featured_post, unpublished_featured_post, unfeatured_post) }
   end
 
   describe '#headline' do
@@ -33,13 +33,13 @@ RSpec.describe Article::Post, type: :model do
 
     context 'when missing' do
       before { subject.assign_attributes(headline: nil) }
-      it     { is_expected.to_not be_valid }
+      it     { is_expected.not_to be_valid }
     end
 
     context 'when not unique' do
       let!(:post) { FactoryGirl.create(:article_post) }
       before      { subject.assign_attributes(headline: post.headline) }
-      it          { is_expected.to_not be_valid }
+      it          { is_expected.not_to be_valid }
     end
   end
 
@@ -52,7 +52,7 @@ RSpec.describe Article::Post, type: :model do
 
     context 'when missing' do
       before { subject.assign_attributes(subhead: nil) }
-      it     { is_expected.to_not be_valid }
+      it     { is_expected.not_to be_valid }
     end
   end
 
@@ -65,7 +65,7 @@ RSpec.describe Article::Post, type: :model do
 
     context 'when missing' do
       before { subject.assign_attributes(body: nil) }
-      it     { is_expected.to_not be_valid }
+      it     { is_expected.not_to be_valid }
     end
   end
 
@@ -78,7 +78,7 @@ RSpec.describe Article::Post, type: :model do
 
     context 'when missing' do
       before { subject.assign_attributes(column: nil) }
-      it     { is_expected.to_not be_valid }
+      it     { is_expected.not_to be_valid }
     end
   end
 
@@ -91,7 +91,7 @@ RSpec.describe Article::Post, type: :model do
 
     context 'when missing' do
       before { subject.assign_attributes(author: nil) }
-      it     { is_expected.to_not be_valid }
+      it     { is_expected.not_to be_valid }
     end
   end
 end

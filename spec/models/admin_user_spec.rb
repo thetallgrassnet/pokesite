@@ -10,13 +10,13 @@ RSpec.describe AdminUser, type: :model do
 
     context 'when missing' do
       before { subject.assign_attributes(name: nil) }
-      it     { is_expected.to_not be_valid }
+      it     { is_expected.not_to be_valid }
     end
 
     context 'when not unique' do
       let!(:user) { FactoryGirl.create(:admin_user) }
       before      { subject.assign_attributes(name: user.name) }
-      it          { is_expected.to_not be_valid }
+      it          { is_expected.not_to be_valid }
     end
   end
 
