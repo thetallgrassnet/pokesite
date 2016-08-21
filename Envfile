@@ -9,5 +9,6 @@ group :production do
   variable :NEW_RELIC_LOG
   variable :RAILS_LOG_TO_STDOUT
   variable :RAILS_SERVE_STATIC_FILES
+  variable :RAYGUN_APIKEY
   variable :SECRET_KEY_BASE
 end
