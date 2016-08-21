@@ -19,3 +19,6 @@
 # Dotenv
 .env
 .env.local
+
+# npm
+/node_modules
