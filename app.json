@@ -1,7 +1,7 @@
 {
   "name": "pokesite",
   "scripts": {
-    "postdeploy": "bin/rake db:setup"
+    "postdeploy": "bin/rake db:schema:load db:seed"
   },
   "env": {
     "AWS_ACCESS_KEY_ID": {
