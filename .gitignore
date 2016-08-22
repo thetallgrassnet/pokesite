@@ -20,5 +20,6 @@
 .env
 .env.local
 
-# npm
+# npm and precompiled assets
 /node_modules
+/public/assets
