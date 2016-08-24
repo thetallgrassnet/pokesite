@@ -94,4 +94,10 @@ RSpec.describe Article::Post, type: :model do
       it     { is_expected.not_to be_valid }
     end
   end
+
+  describe '#to_s' do
+    let(:post) { FactoryGirl.build(:article_post) }
+    subject    { post.to_s }
+    it         { is_expected.to eql(post.headline) }
+  end
 end
