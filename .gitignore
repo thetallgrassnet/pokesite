@@ -20,6 +20,9 @@
 .env
 .env.local
 
-# npm and precompiled assets
+# Ignore npm and precompiled assets.
 /node_modules
 /public/assets
+
+# Ignore coverage reports.
+/coverage
