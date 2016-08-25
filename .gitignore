@@ -16,13 +16,12 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Dotenv
-.env
-.env.local
-
 # Ignore npm and precompiled assets.
 /node_modules
 /public/assets
 
 # Ignore coverage reports.
 /coverage
+
+# Ignore uploads.
+/public/uploads
