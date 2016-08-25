@@ -8,6 +8,8 @@ class Article::Post < ApplicationRecord
 
   friendly_id :headline, use: [:slugged, :history, :reserved]
 
+  mount_uploader :featured_image, FeaturedImageUploader
+
   scope :published, -> { where('published_at < ?', Time.now) }
   scope :featured,  -> { published.where(featured: true) }
 
@@ -18,6 +20,7 @@ class Article::Post < ApplicationRecord
   validates :body,     presence: true
   validates :column,   presence: true
   validates :author,   presence: true
+  validates :featured_image, presence: true
 
   def to_s
     headline
