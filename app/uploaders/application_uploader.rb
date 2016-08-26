@@ -38,8 +38,24 @@ class ApplicationUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    return unless original_filename
+    @random_filename ||= [model ? model_random_id : random_id,
+                          file_extension].join('.')
+  end
 
+  private
+
+  def model_random_id
+    var = :"@#{mounted_as}_random_id"
+    model.instance_variable_get(var) || model.instance_variable_set(var, random_id)
+  end
+
+  def random_id
+    SecureRandom.urlsafe_base64(32)
+  end
+
+  def file_extension
+    file.extension
+  end
 end

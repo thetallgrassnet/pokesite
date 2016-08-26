@@ -22,4 +22,10 @@ class ImageUploader < ApplicationUploader
       img
     end
   end
+
+  private
+
+  def file_extension
+    'jpg'
+  end
 end
