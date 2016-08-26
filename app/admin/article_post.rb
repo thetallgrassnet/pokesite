@@ -1,6 +1,6 @@
 ActiveAdmin.register Article::Post do
   menu parent: 'Articles', label: 'Posts'
-  permit_params :headline, :subhead, :body, :published_at, :publish_now, :featured, :column_id
+  permit_params :headline, :subhead, :body, :published_at, :publish_now, :featured, :featured_image, :column_id
 
   before_create do |post|
     post.author = current_admin_user
@@ -18,7 +18,28 @@ ActiveAdmin.register Article::Post do
     actions
   end
 
-  form do |f|
+  show do |post|
+    attributes_table do
+      row :id
+      row :headline
+      row :subhead
+      row :author
+      row :column
+      row :featured
+      row :featured_image do |p|
+        img src: p.featured_image.thumb.url
+      end
+      row :published_at
+      row :created_at
+      row :updated_at
+    end
+    panel 'Body' do
+      simple_format post.body
+    end
+    active_admin_comments
+  end
+
+  form html: { multipart: true } do |f|
     f.inputs 'Article Details' do
       f.input :headline
       f.input :subhead
@@ -26,6 +47,7 @@ ActiveAdmin.register Article::Post do
       f.input :published_at
       f.input :publish_now, as: :boolean
       f.input :featured
+      f.input :featured_image
     end
     f.inputs 'Content', :body
     f.actions

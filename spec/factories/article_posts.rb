@@ -5,6 +5,7 @@ FactoryGirl.define do
     body { "This is #{headline}" }
     column { create(:article_column) }
     author { create(:admin_user, article_columns: [column]) }
+    featured_image { Rack::Test::UploadedFile.new(Rails.root.join('spec', 'support', 'assets', 'featured_image.png'), 'image/png') }
 
     trait :published do
       published_at (1..10).to_a.sample.days.ago

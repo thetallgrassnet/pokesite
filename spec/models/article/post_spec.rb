@@ -100,4 +100,17 @@ RSpec.describe Article::Post, type: :model do
     subject    { post.to_s }
     it         { is_expected.to eql(post.headline) }
   end
+
+  describe '#featured_image' do
+    subject { FactoryGirl.build(:article_post) }
+
+    context 'when present' do
+      it { is_expected.to be_valid }
+    end
+
+    context 'when missing' do
+      before { subject.assign_attributes(featured_image: nil) }
+      it     { is_expected.not_to be_valid }
+    end
+  end
 end
