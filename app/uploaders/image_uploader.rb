@@ -1,7 +1,7 @@
 class ImageUploader < ApplicationUploader
   include CarrierWave::MiniMagick
 
-  process convert: :jpg
+  process :optimize
 
   version :thumb do
     process resize_to_fit: [100, 100]
@@ -9,5 +9,17 @@ class ImageUploader < ApplicationUploader
 
   def content_type_whitelist
     /image\//
+  end
+
+  def optimize
+    manipulate! do |img|
+      img.format('jpg') do |c|
+        c.strip
+        c.quality 80
+        c.depth 8
+        c.interlace 'plane'
+      end
+      img
+    end
   end
 end
