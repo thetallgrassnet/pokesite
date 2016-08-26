@@ -26,8 +26,8 @@ ActiveAdmin.register Article::Post do
       row :author
       row :column
       row :featured
-      row :featured_image do |post|
-        img src: post.featured_image.thumb.url
+      row :featured_image do |p|
+        img src: p.featured_image.thumb.url
       end
       row :published_at
       row :created_at
