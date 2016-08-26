@@ -4,7 +4,7 @@ cache:
   directories:
   - node_modules
 addons:
-  postgresql: '9.4'
+  postgresql: '9.5'
   code_climate:
     repo_token:
       secure: HR2YJ914YTptsNWBWiCMYdpRelb/whBitUdWW+DsI7RWIeufS7s/ntL5IufW5mbxLRp/yOj2LwvR//Js+GMMgvGf9aWc58DqiMiD34wrk7bo7zFbRDhxcEJrpBQWe/p21qKm8CRcVkqoOvegGXPWV+Ssq7fkYP2mgrlinchxK/DurjQgxy3BJblVBKDjsMnLLvAkPR1dkiGMrx0ikVlMn6T9HFA0DbTbrY2x0Lkd/EMEXqsMg2KzmOGwOwXV8fxB9F/33Ap9tGr7Hqpg/DT6sfLfX23TH9lmnterEOnRx25XW/N+i8vvNnB4B8rplqSMUEbImR9V/Yaa04+Fc9VEbSidGjJxngfXXwXFEIH27fZ68ZvmCYZF0K2mKD/swQ/gAAYXoofc2GEB80ULY8hAUxYYTuR5qgzBGPfiCSZdMTnM/WmWsW429YBewPAFnL3INH3sqkTokhG7g0CFn+zfn+KWQeDeNTa5ys0fkoCZZPJfGQWyZnNdUrhx+oUP+dzx7UQA5uaG9j+L2Mi+SMdPN5QiXywhv+94n8TTG4aqO5aQUX0hCJz+DI+UgpaXa2ZwM8408hSoHHnKGrnWNsDQSMFy5Q3ZAyUnwXk+hgFDFU0UWKbE/fvVB7JxSw3IgR4N4ijUTRTLpST7FPQ4v11e0YwE4osh64HhygfAaV9oz2w=
