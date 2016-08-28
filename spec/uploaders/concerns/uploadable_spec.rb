@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 class TestUploader < CarrierWave::Uploader::Base
-  include ApplicationUploader
+  include Uploadable
 end
 
-describe ApplicationUploader do
-  it { expect { class NotAnUploader; include ApplicationUploader; end }.to raise_error 'must be included in a CarrierWave uploader' }
+describe Uploadable do
+  it { expect { class NotAnUploader; include Uploadable; end }.to raise_error 'must be included in a CarrierWave uploader' }
 end
 
 describe TestUploader do

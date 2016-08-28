@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 class TestImageUploader < CarrierWave::Uploader::Base
-  include ImageUploader
+  include Imageable
 end
 
 describe TestImageUploader do

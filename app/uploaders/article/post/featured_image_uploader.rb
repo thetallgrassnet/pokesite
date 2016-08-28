@@ -1,5 +1,5 @@
 class Article::Post::FeaturedImageUploader < CarrierWave::Uploader::Base
-  include ImageUploader
+  include Imageable
 
   process resize_to_fill: [1280, 720]
 

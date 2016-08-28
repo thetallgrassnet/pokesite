@@ -1,6 +1,6 @@
-module ImageUploader
+module Imageable
   extend ActiveSupport::Concern
-  include ApplicationUploader
+  include Uploadable
   include CarrierWave::MiniMagick
 
   included do
