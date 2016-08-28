@@ -1,4 +1,5 @@
-class ApplicationUploader < CarrierWave::Uploader::Base
+module ApplicationUploader
+  extend ActiveSupport::Concern
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

@@ -26,4 +26,9 @@ describe Article::Post::FeaturedImageUploader do
     subject { uploader.small }
     it      { is_expected.to have_dimensions(640, 360) }
   end
+
+  context 'thumb' do
+    subject { uploader.thumb }
+    it      { is_expected.to be_no_larger_than(100, 100) }
+  end
 end

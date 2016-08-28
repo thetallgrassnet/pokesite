@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-describe ImageUploader do
+class TestImageUploader < CarrierWave::Uploader::Base
+  include ImageUploader
+end
+
+describe TestImageUploader do
   include CarrierWave::Test::Matchers
 
   let(:post)     { FactoryGirl.create(:article_post) }
   let(:image)    { Rails.root.join('spec', 'support', 'assets', 'featured_image.png') }
-  let(:uploader) { ImageUploader.new(post) }
-
-  after do
-    uploader.remove!
-  end
+  let(:uploader) { TestImageUploader.new(post) }
 
   context 'with a non-image' do
     subject { uploader.store!(Rack::Test::UploadedFile.new(image, 'text/plain')) }
@@ -18,12 +18,13 @@ describe ImageUploader do
 
   context 'with an image' do
     before do
-      ImageUploader.enable_processing = true
+      TestImageUploader.enable_processing = true
       File.open(image) { |f| uploader.store!(f) }
     end
 
     after do
-      ImageUploader.enable_processing = false
+      TestImageUploader.enable_processing = false
+      uploader.remove!
     end
 
     context 'default' do

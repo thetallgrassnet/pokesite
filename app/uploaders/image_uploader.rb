@@ -1,10 +1,14 @@
-class ImageUploader < ApplicationUploader
+module ImageUploader
+  extend ActiveSupport::Concern
+  include ApplicationUploader
   include CarrierWave::MiniMagick
 
-  process :optimize
+  included do
+    process :optimize
 
-  version :thumb do
-    process resize_to_fit: [100, 100]
+    version :thumb do
+      process resize_to_fit: [100, 100]
+    end
   end
 
   def content_type_whitelist
