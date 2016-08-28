@@ -1,4 +1,4 @@
-module ApplicationUploader
+module Uploadable
   extend ActiveSupport::Concern
 
   included do |base|
