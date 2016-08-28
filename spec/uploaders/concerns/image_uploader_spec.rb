@@ -12,8 +12,10 @@ describe TestImageUploader do
   let(:uploader) { TestImageUploader.new(post) }
 
   context 'with a non-image' do
-    subject { uploader.store!(Rack::Test::UploadedFile.new(image, 'text/plain')) }
-    it      { expect { subject }.to raise_error CarrierWave::IntegrityError }
+    describe '#store' do
+      subject { uploader.store!(Rack::Test::UploadedFile.new(image, 'text/plain')) }
+      it      { expect { subject }.to raise_error CarrierWave::IntegrityError }
+    end
   end
 
   context 'with an image' do
@@ -27,12 +29,12 @@ describe TestImageUploader do
       uploader.remove!
     end
 
-    context 'default' do
+    describe 'self' do
       subject { uploader }
       it      { is_expected.to be_format('jpeg') }
     end
 
-    context 'thumb' do
+    describe '#thumb' do
       subject { uploader.thumb }
       it      { is_expected.to be_no_larger_than(100, 100) }
     end

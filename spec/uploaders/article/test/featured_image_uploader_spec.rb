@@ -17,17 +17,17 @@ describe Article::Post::FeaturedImageUploader do
     uploader.remove!
   end
 
-  context 'default' do
+  describe 'self' do
     subject { uploader }
     it      { is_expected.to have_dimensions(1280, 720) }
   end
 
-  context 'small' do
+  describe '#small' do
     subject { uploader.small }
     it      { is_expected.to have_dimensions(640, 360) }
   end
 
-  context 'thumb' do
+  describe '#thumb' do
     subject { uploader.thumb }
     it      { is_expected.to be_no_larger_than(100, 100) }
   end
