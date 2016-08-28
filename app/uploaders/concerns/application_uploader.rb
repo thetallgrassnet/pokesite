@@ -1,4 +1,9 @@
-class ApplicationUploader < CarrierWave::Uploader::Base
+module ApplicationUploader
+  extend ActiveSupport::Concern
+
+  included do |base|
+    raise 'must be included in a CarrierWave uploader' unless base.ancestors.include?(CarrierWave::Uploader::Base)
+  end
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
