@@ -44,6 +44,7 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick', '~> 4.5.1'
 gem 'fog-aws', '~> 0.11'
 gem 'browserify-rails', '~> 3.1.0'
+gem 'sir_trevor_rails', '~> 0.5.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
