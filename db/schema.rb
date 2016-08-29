@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825143539) do
+ActiveRecord::Schema.define(version: 20160828225635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,10 @@ ActiveRecord::Schema.define(version: 20160825143539) do
     t.index ["author_id"], name: "index_article_posts_on_author_id", using: :btree
     t.index ["column_id"], name: "index_article_posts_on_column_id", using: :btree
     t.index ["slug"], name: "index_article_posts_on_slug", unique: true, using: :btree
+  end
+
+  create_table "editor_images", force: :cascade do |t|
+    t.string "editor_image"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

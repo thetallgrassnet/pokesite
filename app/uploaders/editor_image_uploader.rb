@@ -1,10 +1,6 @@
 class EditorImageUploader < CarrierWave::Uploader::Base
   include Imageable
 
-  def store_dir
-    "uploads/#{'test/' if Rails.env.test?}editor"
-  end
-
   version :large do
     process resize_to_limit: [850, nil]
   end
