@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activeadmin/inherited_resources.git
-  revision: ba9467db4817944591df35dfe340f4c05a948033
+  revision: 4434f0ae72f790cf371728838c927c338100555d
   specs:
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5.1)
@@ -289,7 +289,7 @@ GEM
     rspec-mocks (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
-    rspec-rails (3.5.1)
+    rspec-rails (3.5.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
