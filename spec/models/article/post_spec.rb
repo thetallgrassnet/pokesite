@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Article::Post, type: :model do
+  subject { FactoryGirl.build(:article_post) }
+
   describe '.published' do
     let!(:published_post)   { FactoryGirl.create(:article_post, :published) }
     let!(:future_post)      { FactoryGirl.create(:article_post, :future_published) }
@@ -25,8 +27,6 @@ RSpec.describe Article::Post, type: :model do
   end
 
   describe '#headline' do
-    subject { FactoryGirl.build(:article_post) }
-
     context 'when present and unique' do
       it { is_expected.to be_valid }
     end
@@ -44,8 +44,6 @@ RSpec.describe Article::Post, type: :model do
   end
 
   describe '#subhead' do
-    subject { FactoryGirl.build(:article_post) }
-
     context 'when present' do
       it { is_expected.to be_valid }
     end
@@ -57,8 +55,6 @@ RSpec.describe Article::Post, type: :model do
   end
 
   describe '#body' do
-    subject { FactoryGirl.build(:article_post) }
-
     context 'when present' do
       it { is_expected.to be_valid }
     end
@@ -70,8 +66,6 @@ RSpec.describe Article::Post, type: :model do
   end
 
   describe '#column' do
-    subject { FactoryGirl.build(:article_post) }
-
     context 'when present' do
       it { is_expected.to be_valid }
     end
@@ -83,8 +77,6 @@ RSpec.describe Article::Post, type: :model do
   end
 
   describe '#author' do
-    subject { FactoryGirl.build(:article_post) }
-
     context 'when present' do
       it { is_expected.to be_valid }
     end
@@ -95,15 +87,7 @@ RSpec.describe Article::Post, type: :model do
     end
   end
 
-  describe '#to_s' do
-    let(:post) { FactoryGirl.build(:article_post) }
-    subject    { post.to_s }
-    it         { is_expected.to eql(post.headline) }
-  end
-
   describe '#featured_image' do
-    subject { FactoryGirl.build(:article_post) }
-
     context 'when present' do
       it { is_expected.to be_valid }
     end
@@ -112,5 +96,11 @@ RSpec.describe Article::Post, type: :model do
       before { subject.assign_attributes(featured_image: nil) }
       it     { is_expected.not_to be_valid }
     end
+  end
+
+  describe '#to_s' do
+    let(:post) { FactoryGirl.build(:article_post) }
+    subject    { post.to_s }
+    it         { is_expected.to eql(post.headline) }
   end
 end
