@@ -10,6 +10,8 @@ class Article::Post < ApplicationRecord
 
   mount_uploader :featured_image, FeaturedImageUploader
 
+  sir_trevor_content :body
+
   scope :published, -> { where('published_at < ?', Time.now) }
   scope :featured,  -> { published.where(featured: true) }
 

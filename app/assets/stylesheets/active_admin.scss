@@ -11,7 +11,28 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 
+@import "sir-trevor/build/sir-trevor.css";
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+
+.st-outer {
+  padding-bottom: 1.750em;
+}
+
+.st-block {
+  padding: 1em;
+}
+
+.st-block-controls__button {
+  color: #cfcfcf;
+  box-shadow: none;
+  text-shadow: none;
+
+  &:hover {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0px rgba(255, 255, 255, 0.2) inset;
+    text-shadow: #000 0 1px 0;
+  }
+}

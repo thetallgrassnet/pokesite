@@ -34,7 +34,7 @@ ActiveAdmin.register Article::Post do
       row :updated_at
     end
     panel 'Body' do
-      simple_format post.body
+      render post.body
     end
     active_admin_comments
   end
@@ -49,7 +49,9 @@ ActiveAdmin.register Article::Post do
       f.input :featured
       f.input :featured_image
     end
-    f.inputs 'Content', :body
+    f.inputs 'Content' do
+      f.input :body, label: false, input_html: { class: 'js-st-instance' }
+    end
     f.actions
   end
 
