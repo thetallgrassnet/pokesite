@@ -22,12 +22,6 @@
     "HEROKU_PARENT_APP_NAME": {
       "required": true
     },
-    "NEW_RELIC_LICENSE_KEY": {
-      "required": true
-    },
-    "NEW_RELIC_LOG": {
-      "required": true
-    },
     "RAILS_LOG_TO_STDOUT": {
       "required": true
     },
@@ -43,7 +37,8 @@
     "papertrail",
     "heroku-postgresql",
     "raygun",
-    "heroku-redis"
+    "heroku-redis",
+    "newrelic"
   ],
   "buildpacks": [
     {
