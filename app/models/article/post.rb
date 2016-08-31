@@ -8,6 +8,8 @@ class Article::Post < ApplicationRecord
 
   friendly_id :headline, use: [:slugged, :history, :reserved]
 
+  has_paper_trail
+
   mount_uploader :featured_image, FeaturedImageUploader
 
   sir_trevor_content :body
