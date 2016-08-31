@@ -1,0 +1,14 @@
+#= require active_admin/base
+
+SirTrevor = require('sir-trevor')
+
+SirTrevor.setDefaults {
+  defaultType: 'text'
+  iconUrl: '<%= asset_path "sir-trevor/build/sir-trevor-icons.svg" %>'
+  uploadUrl: '/admin/editor_images'
+}
+
+$ ->
+  editor = new SirTrevor.Editor {
+    el: document.querySelector('.js-st-instance')
+  }
