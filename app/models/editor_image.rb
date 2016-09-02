@@ -5,7 +5,9 @@ class EditorImage < ApplicationRecord
 
   validates :editor_image, presence: true
 
-  def to_json
-    editor_image.to_json
+  def as_json(options = nil)
+    {
+      file: editor_image.as_json(options)
+    }
   end
 end
