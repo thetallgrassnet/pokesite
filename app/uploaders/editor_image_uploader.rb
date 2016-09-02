@@ -12,10 +12,4 @@ class EditorImageUploader < CarrierWave::Uploader::Base
   version :small do
     process resize_to_limit: [320, nil]
   end
-
-  def to_json(options = nil)
-    {
-      file: super['uploader']
-    }
-  end
 end
