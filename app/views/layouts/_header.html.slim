@@ -1,0 +1,6 @@
+header
+  #logo
+    = link_to root_path
+      = image_tag 'logo.png', alt: t('site.title'), 'data-interchange': "[#{image_path 'logo.png'}, small], [#{image_path 'logo@2x.png'}, retina]"
+      h1.show-for-sr = t('site.title')
+      h2.show-for-sr = t('site.tagline')

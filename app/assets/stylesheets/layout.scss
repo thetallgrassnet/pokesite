@@ -1,3 +1,15 @@
-main {
+header, main {
   @include flex-grid-row();
+}
+
+#logo {
+  @include flex-grid-column();
+
+  img {
+    max-height: 100px;
+  }
+
+  @include breakpoint(medium) {
+    @include flex-grid-column(7);
+  }
 }
