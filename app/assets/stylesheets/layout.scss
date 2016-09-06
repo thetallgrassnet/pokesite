@@ -1,4 +1,4 @@
-header, main {
+header, main, footer {
   @include flex-grid-row();
 }
 
@@ -12,4 +12,12 @@ header, main {
   @include breakpoint(medium) {
     @include flex-grid-column(7);
   }
+}
+
+footer {
+  font-size: 0.8rem;
+}
+
+#copyright {
+  @include flex-grid-column();
 }
