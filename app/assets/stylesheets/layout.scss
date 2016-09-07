@@ -1,5 +1,9 @@
-header, main, footer {
+header, #site-nav, main, footer {
   @include flex-grid-row();
+}
+
+header {
+  @include show-for(medium);
 }
 
 #logo {
@@ -11,6 +15,37 @@ header, main, footer {
 
   @include breakpoint(medium) {
     @include flex-grid-column(7);
+  }
+}
+
+#site-nav {
+  @include top-bar-container();
+
+  padding: $topbar-padding 0;
+
+  nav {
+    @include flex-grid-column();
+  }
+
+  .top-bar-title {
+    @include flex-grid-row(nest);
+    @include hide-for(medium);
+
+    span {
+      @include flex-grid-column(shrink);
+
+      order: 1;
+    }
+
+    a {
+      @include flex-grid-column();
+
+      order: 0;
+    }
+
+    img {
+      height: 28px;
+    }
   }
 }
 
