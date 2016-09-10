@@ -10,9 +10,9 @@ GIT
 
 GIT
   remote: https://github.com/carrierwaveuploader/carrierwave.git
-  revision: 8ceadb7fca5068564cfa8a33b1a76af86c6cbff3
+  revision: c45699c318ca895f89fa3304204e48b5f1c411f1
   specs:
-    carrierwave (0.11.0)
+    carrierwave (1.0.0.beta)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
@@ -219,9 +219,8 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
-    paper_trail (5.2.1)
+    paper_trail (5.2.2)
       activerecord (>= 3.0, < 6.0)
-      activesupport (>= 3.0, < 6.0)
       request_store (~> 1.1)
     pg (0.18.4)
     pkg-config (1.1.7)
