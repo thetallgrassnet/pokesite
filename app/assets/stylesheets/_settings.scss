@@ -41,6 +41,7 @@
 //  36. Top Bar
 
 @import 'util/util';
+@import 'colors';
 
 // 1. Global
 // ---------
@@ -49,11 +50,11 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #2199e8,
-  secondary: #777,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #ec5840,
+  primary: $color-primary-0,
+  secondary: $color-secondary-1-0,
+  success: $color-primary-2,
+  warning: $color-secondary-2-2,
+  alert: $color-complement-2,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
