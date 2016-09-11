@@ -71,3 +71,7 @@ footer {
 #copyright {
   @include flex-grid-column();
 }
+
+.ad {
+  @include flex-grid-column();
+}
