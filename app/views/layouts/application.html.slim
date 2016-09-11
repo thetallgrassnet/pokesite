@@ -11,9 +11,9 @@ html lang="en"
     = csrf_meta_tag
 
   body
+    #container
+      = render "layouts/header"
 
-    = render "layouts/header"
+      main == yield
 
-    main == yield
-
-    = render "layouts/footer"
+      = render "layouts/footer"
