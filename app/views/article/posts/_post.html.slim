@@ -1,0 +1,4 @@
+= content_tag_for :article, post
+  h1 = link_to_unless_current post.headline, post
+
+  = render post.body
