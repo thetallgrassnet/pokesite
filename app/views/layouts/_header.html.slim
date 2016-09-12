@@ -1,0 +1,22 @@
+header
+  #logo
+    = link_to root_path
+      = image_tag 'logo.png', alt: t('site.title'), 'data-interchange': "[#{image_path 'logo.png'}, small], [#{image_path 'logo@2x.png'}, retina]"
+      h1.show-for-sr = t('site.title')
+      h2.show-for-sr = t('site.tagline')
+
+  .ad
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- thetallgrass.net Header -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3960000263279832" data-ad-slot="6982703507" data-ad-format="auto"></ins>
+    javascript:
+      (adsbygoogle = window.adsbygoogle || []).push({});
+
+#site-nav
+  nav
+    .top-bar-title
+      span data-responsive-toggle="responsive-site-nav"
+        button.menu-icon.dark type="button" data-toggle=""
+      = link_to root_path
+        = image_tag 'logo-small.png', alt: t('site.title'), 'data-interchange': "[#{image_path 'logo-small.png'}, small], [#{image_path 'logo-small@2x.png'}, retina]"
+        strong.show-for-sr = t('site.title')
