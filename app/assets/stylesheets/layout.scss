@@ -63,6 +63,14 @@ main {
   flex-grow: 1;
 }
 
+nav.pagination {
+  @include flex-grid-row();
+
+  ul.pagination {
+    @include flex-grid-column();
+  }
+}
+
 footer {
   font-size: 0.8rem;
   margin: 1rem 0;

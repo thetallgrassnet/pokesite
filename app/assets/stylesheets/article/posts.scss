@@ -1,3 +1,7 @@
+.posts-list {
+  @include flex-grid-row();
+}
+
 article.article_post {
   @include flex-grid-column();
 
