@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   namespace :article, path: 'articles' do
     root 'posts#index'
+    get '(page/:page)', controller: :posts, action: :index
+
     resources :posts, only: :show
   end
 

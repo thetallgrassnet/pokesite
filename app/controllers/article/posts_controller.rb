@@ -1,6 +1,6 @@
 class Article::PostsController < ApplicationController
   def index
-    @posts = Article::Post.published
+    @posts = Article::Post.published.page params[:page]
   end
 
   def show
