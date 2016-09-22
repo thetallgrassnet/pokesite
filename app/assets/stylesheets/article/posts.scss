@@ -8,4 +8,14 @@ article.article_post {
   @include breakpoint(medium) {
     @include flex-grid-column(9);
   }
+
+  .featured-image {
+    @include flex-grid-row(nest);
+
+    figure {
+      @include flex-grid-column(12, 0);
+
+      margin: 0;
+    }
+  }
 }
