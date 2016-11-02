@@ -94,7 +94,7 @@ GEM
       sprockets (>= 3.5.2)
     builder (3.2.2)
     byebug (9.0.6)
-    carrierwave (1.0.0.beta)
+    carrierwave (1.0.0.rc)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
@@ -364,7 +364,7 @@ GEM
     unf_ext (0.0.7.2)
     warden (1.2.6)
       rack (>= 1.0)
-    web-console (3.3.1)
+    web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
       debug_inspector
