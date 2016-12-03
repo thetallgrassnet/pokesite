@@ -406,6 +406,7 @@ DEPENDENCIES
   raygun4ruby
   rspec-rails
   sass-rails (~> 5.0)
+  simplecov
   sir_trevor_rails (~> 0.5.1)
   slim-rails (~> 3.1.1)
   spring

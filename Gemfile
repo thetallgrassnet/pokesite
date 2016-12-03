@@ -72,7 +72,8 @@ group :development do
 end
 
 group :test do
-  gem 'codeclimate-test-reporter', require: nil
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
