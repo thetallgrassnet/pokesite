@@ -11,7 +11,7 @@ addons:
 bundler_args: "--without development"
 before_script:
 - cp config/database.travis.yml config/database.yml
-- bin/rake db:setup
+- bin/rails db:setup
 - npm install
 after_script:
 - bundle exec codeclimate-test-reporter
