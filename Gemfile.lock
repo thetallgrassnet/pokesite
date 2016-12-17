@@ -1,4 +1,23 @@
 GIT
+  remote: https://github.com/activeadmin/activeadmin.git
+  revision: 4f494073c6c0c016ba4902faad65f07ee034bb1a
+  specs:
+    activeadmin (1.0.0.pre4)
+      arbre (~> 1.0, >= 1.0.2)
+      bourbon
+      coffee-rails
+      formtastic (~> 3.1)
+      formtastic_i18n
+      inherited_resources (~> 1.6)
+      jquery-rails
+      jquery-ui-rails
+      kaminari (~> 0.15)
+      railties (>= 3.2, < 5.1)
+      ransack (~> 1.3)
+      sass-rails
+      sprockets (< 4.1)
+
+GIT
   remote: https://github.com/activeadmin/inherited_resources.git
   revision: 4434f0ae72f790cf371728838c927c338100555d
   specs:
@@ -50,20 +69,6 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    activeadmin (1.0.0.pre4)
-      arbre (~> 1.0, >= 1.0.2)
-      bourbon
-      coffee-rails
-      formtastic (~> 3.1)
-      formtastic_i18n
-      inherited_resources (~> 1.6)
-      jquery-rails
-      jquery-ui-rails
-      kaminari (~> 0.15)
-      rails (>= 3.2, < 5.1)
-      ransack (~> 1.3)
-      sass-rails
-      sprockets (< 4)
     activejob (5.0.0.1)
       activesupport (= 5.0.0.1)
       globalid (>= 0.3.6)
@@ -109,7 +114,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.11.1)
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     descendants_tracker (0.0.4)
@@ -377,7 +382,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin (~> 1.0.0.pre4)
+  activeadmin!
   browserify-rails (~> 3.1.0)
   byebug
   carrierwave (~> 1.0.0.beta)
