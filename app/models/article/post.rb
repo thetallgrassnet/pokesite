@@ -30,6 +30,10 @@ class Article::Post < ApplicationRecord
     headline
   end
 
+  def excerpt
+    body.first_block_of_type(:text)
+  end
+
   private
 
   def publish_if_publish_now

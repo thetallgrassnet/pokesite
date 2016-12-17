@@ -1,4 +1,7 @@
 = content_tag_for :article, post
+  .featured-image
+    figure = image_tag post.featured_image
+
   h1 = link_to_unless_current post.headline, post
 
-  = render post.body
+  = render post.content

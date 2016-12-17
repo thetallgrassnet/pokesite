@@ -103,4 +103,10 @@ RSpec.describe Article::Post, type: :model do
     subject    { post.to_s }
     it         { is_expected.to eql(post.headline) }
   end
+
+  describe '#excerpt' do
+    let(:post) { FactoryGirl.build(:article_post) }
+    subject    { post.excerpt }
+    it         { is_expected.to be_a(SirTrevorRails::Blocks::TextBlock) }
+  end
 end
