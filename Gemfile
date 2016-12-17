@@ -45,6 +45,7 @@ gem 'fog-aws', '~> 0.11'
 gem 'browserify-rails', '~> 3.1.0'
 gem 'sir_trevor_rails', '~> 0.5.1'
 gem 'record_tag_helper', '~> 1.0'
+gem 'active_decorator', '~> 0.8'
 
 gem 'slim-rails', '~> 3.1.1'
 gem 'foundation-rails', '~> 6.2.3'
