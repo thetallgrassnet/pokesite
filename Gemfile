@@ -75,6 +75,7 @@ group :development do
 end
 
 group :test do
+  gem 'mocha'
   gem 'simplecov'
   gem 'codeclimate-test-reporter'
 end
