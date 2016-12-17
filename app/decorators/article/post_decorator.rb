@@ -1,0 +1,2 @@
+module Article::PostDecorator
+end
