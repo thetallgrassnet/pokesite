@@ -11,13 +11,13 @@ describe Article::PostDecorator do
     subject { post.content }
 
     context 'show' do
-      before { post.expects(:action_name).returns('show') }
+      before { expect_action('show') }
 
       it { is_expected.to be_an(Array) }
     end
 
     context 'index' do
-      before { post.expects(:action_name).returns('index') }
+      before { expect_action('index') }
 
       it { is_expected.to be_a(SirTrevorRails::Blocks::TextBlock) }
     end
@@ -30,15 +30,19 @@ describe Article::PostDecorator do
     subject { post.display_featured_image }
 
     context 'show' do
-      before { post.expects(:action_name).returns('show') }
+      before { expect_action('show') }
 
       it { is_expected.to have_dimensions(1280, 720) }
     end
 
     context 'index' do
-      before { post.expects(:action_name).returns('index') }
+      before { expect_action('index') }
 
       it { is_expected.to have_dimensions(100, 56) }
     end
+  end
+
+  def expect_action(action)
+    post.expects(:action_name).returns(action)
   end
 end
