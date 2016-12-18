@@ -7,23 +7,21 @@ describe Article::PostDecorator do
   subject    { post }
   it         { is_expected.to be_an(Article::Post) }
 
-  describe '.content' do
+  describe '#content' do
     subject { post.content }
 
     context 'when on show' do
       before { expect_action('show') }
-
-      it { is_expected.to be_an(Array) }
+      it     { is_expected.to be_an(Array) }
     end
 
     context 'when on index' do
       before { expect_action('index') }
-
-      it { is_expected.to be_a(SirTrevorRails::Blocks::TextBlock) }
+      it     { is_expected.to be_a(SirTrevorRails::Blocks::TextBlock) }
     end
   end
 
-  describe '.display_featured_image' do
+  describe '#display_featured_image' do
     before { Article::Post::FeaturedImageUploader.enable_processing = true }
     after  { Article::Post::FeaturedImageUploader.enable_processing = false }
 
@@ -31,14 +29,12 @@ describe Article::PostDecorator do
 
     context 'when on show' do
       before { expect_action('show') }
-
-      it { is_expected.to have_dimensions(1280, 720) }
+      it     { is_expected.to have_dimensions(1280, 720) }
     end
 
     context 'when on index' do
       before { expect_action('index') }
-
-      it { is_expected.to have_dimensions(100, 56) }
+      it     { is_expected.to have_dimensions(100, 56) }
     end
   end
 
