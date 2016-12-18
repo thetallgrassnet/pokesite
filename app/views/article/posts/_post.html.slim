@@ -1,6 +1,6 @@
 = content_tag_for :article, post
   .featured-image
-    figure = image_tag post.featured_image
+    figure = image_tag post.display_featured_image
 
   h1 = link_to_unless_current post.headline, post
 
