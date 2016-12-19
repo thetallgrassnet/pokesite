@@ -1,5 +1,5 @@
-li class="#{'current' if page.current?}" 
+li class="#{'current' if page.current?}"
   - if page.current?
-    = page
+    == t('views.pagination.current', page: page)
   - else
-    = link_to page, url, {:remote => remote, :rel => page.next? ? 'next' : page.prev? ? 'prev' : nil}
+    = link_to raw(t('views.pagination.page', page: page)), url, rel: (page.next? ? 'next' : page.prev? ? 'prev' : nil), remote: remote, "aria-label" => strip_tags(raw(t('views.pagination.page', page: page)))

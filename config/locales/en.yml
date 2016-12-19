@@ -23,3 +23,9 @@ en:
   site:
     title: thetallgrass.net
     tagline: Your one-stop Pokémon fan community and database
+  views:
+    pagination:
+      previous: 'Previous <span class="show-for-sr">page</span>'
+      next: 'Next <span class="show-for-sr">page</span>'
+      current: '<span class="show-for-sr">You are on page</span> %{page}'
+      page: '<span class="show-for-sr">Page</span> %{page}'

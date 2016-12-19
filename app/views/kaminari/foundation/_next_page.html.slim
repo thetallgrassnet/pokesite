@@ -1,2 +1,2 @@
-li
-  = link_to_unless current_page.last?, raw(t 'views.pagination.next'), url, :rel => 'next', :remote => remote
+li.pagination-next class="#{'disabled' if current_page.last?}"
+  = link_to_unless current_page.last?, raw(t 'views.pagination.next'), url, rel: 'next', remote: remote, "aria-label" => strip_tags(raw(t('views.pagination.next')))
