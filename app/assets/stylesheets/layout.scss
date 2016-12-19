@@ -6,7 +6,7 @@
   min-height: 100vh;
 }
 
-header, #site-nav, main, footer {
+header, #site-nav, #site-body, footer {
   @include flex-grid-row();
 
   margin: 0;
@@ -59,8 +59,21 @@ header {
   }
 }
 
-main {
+#site-body {
   flex-grow: 1;
+}
+
+main {
+  @include flex-grid-column();
+
+  @include breakpoint(medium) {
+    @include flex-grid-column(9);
+  }
+}
+
+aside.sidebar {
+  @include flex-grid-column();
+  @include show-for(medium);
 }
 
 nav.pagination {
