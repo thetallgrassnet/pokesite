@@ -6,13 +6,13 @@
   min-height: 100vh;
 }
 
-header, #site-nav, #site-body, footer {
+#site-header, #site-nav, #site-body, #site-footer {
   @include flex-grid-row();
 
   margin: 0;
 }
 
-header {
+#site-header {
   @include show-for(medium);
 }
 
@@ -86,7 +86,7 @@ nav.pagination {
   }
 }
 
-footer {
+#site-footer {
   font-size: 0.8rem;
   margin: 1rem 0;
 }
