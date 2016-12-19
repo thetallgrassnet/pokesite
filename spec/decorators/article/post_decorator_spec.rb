@@ -34,7 +34,7 @@ describe Article::PostDecorator do
 
     context 'when on index' do
       before { expect_action('index') }
-      it     { is_expected.to have_dimensions(100, 56) }
+      it     { is_expected.to be_no_larger_than(200, 200) }
     end
   end
 
