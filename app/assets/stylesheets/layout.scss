@@ -79,6 +79,8 @@ aside.sidebar {
 nav.pagination {
   @include flex-grid-row();
 
+  text-align: center;
+
   ul.pagination {
     @include flex-grid-column();
   }
