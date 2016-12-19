@@ -2,6 +2,7 @@
   .featured-image
     figure = image_tag post.display_featured_image
 
-  h1 = link_to_unless_current post.headline, post
+  .content
+    h1 = link_to_unless_current post.headline, post
 
-  = render post.content
+    = render post.content

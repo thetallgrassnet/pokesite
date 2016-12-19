@@ -1,21 +1,43 @@
-.posts-list {
-  @include flex-grid-row();
+.article_post {
+  .featured-image {
+    figure {
+      margin: 0;
+    }
+  }
 }
 
-article.article_post {
-  @include flex-grid-column();
+.posts-list {
+  .article_post {
+    @include flex-grid-row(nest);
 
-  @include breakpoint(medium) {
-    @include flex-grid-column(9);
+    margin-top: 1rem;
+
+    .featured-image {
+      @include flex-grid-column(3, 0);
+
+      @include breakpoint(medium) {
+        @include flex-grid-column(2, 0);
+      }
+    }
+
+    .content {
+      @include flex-grid-column(9);
+
+      @include breakpoint(medium) {
+        @include flex-grid-column(10);
+      }
+    }
   }
+}
+
+main > .article_post {
+  @include flex-grid-row();
 
   .featured-image {
     @include flex-grid-row(nest);
 
     figure {
       @include flex-grid-column(12, 0);
-
-      margin: 0;
     }
   }
 }
