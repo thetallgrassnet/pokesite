@@ -3,6 +3,8 @@
     figure = image_tag post.display_featured_image
 
   .content
-    h1 = link_to_unless_current post.headline, post
+    header
+      h1 = link_to_unless_current post.headline, post
+      == post.byline
 
     = render post.content

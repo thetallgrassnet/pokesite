@@ -4,6 +4,11 @@
       margin: 0;
     }
   }
+
+  .byline {
+    font-size: $small-font-size;
+    color: $dark-gray;
+  }
 }
 
 .posts-list {
