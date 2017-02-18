@@ -35,7 +35,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'envied', github: 'monterail/envied'
 
 gem 'activeadmin', github: 'activeadmin/activeadmin'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise', '~> 4.2.0'
 gem 'paper_trail', '~> 5.2.0'
 gem 'pundit', '~> 1.1.0'
