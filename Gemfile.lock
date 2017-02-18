@@ -18,16 +18,6 @@ GIT
       sprockets (< 4.1)
 
 GIT
-  remote: https://github.com/activeadmin/inherited_resources.git
-  revision: 3efcc730d2390b7f9c7c2bd69a638e92d8137d33
-  specs:
-    inherited_resources (1.7.0)
-      actionpack (>= 3.2, < 5.1)
-      has_scope (~> 0.6)
-      railties (>= 3.2, < 5.1)
-      responders
-
-GIT
   remote: https://github.com/flori/json.git
   revision: 7f4cfd853f2c919d854fb95548a19980feff17e8
   branch: v1.8
@@ -191,6 +181,11 @@ GEM
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.8.0)
+    inherited_resources (1.7.0)
+      actionpack (>= 3.2, < 5.1)
+      has_scope (~> 0.6)
+      railties (>= 3.2, < 5.1)
+      responders
     ipaddress (0.8.3)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -411,7 +406,6 @@ DEPENDENCIES
   guard
   guard-rails
   guard-rspec
-  inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks (~> 2.1.0)
