@@ -74,6 +74,10 @@ main {
 aside.sidebar {
   @include flex-grid-column();
   @include show-for(medium);
+
+  h2 {
+    font-size: 1.5rem;
+  }
 }
 
 nav.pagination {

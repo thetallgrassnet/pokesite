@@ -1,1 +1,12 @@
 = render @post
+
+- content_for :sidebar
+  h2 Latest Articles
+  ul
+    - @latest_posts.each do |post|
+      li = link_to post
+
+  h2 Latest in #{@post.column}
+  ul
+    - @latest_in_col.each do |post|
+      li = link_to post
