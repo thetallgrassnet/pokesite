@@ -1,3 +1,9 @@
 .posts-list = render @posts
 
 = paginate @posts, theme: 'foundation'
+
+- content_for :sidebar
+  h2 Columns
+  ul
+    - @columns.each do |column|
+      li = link_to column
