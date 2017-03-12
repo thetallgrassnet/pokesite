@@ -29,6 +29,6 @@ describe Article::Post::FeaturedImageUploader do
 
   describe '#thumb' do
     subject { uploader.thumb }
-    it      { is_expected.to be_no_larger_than(100, 100) }
+    it      { is_expected.to be_no_larger_than(200, 200) }
   end
 end

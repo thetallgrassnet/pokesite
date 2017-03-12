@@ -6,6 +6,7 @@ html lang="en"
 
     title == content_for?(:title) ? yield(:title) : t('site.title')
 
+    = stylesheet_link_tag "https://fonts.googleapis.com/css?family=Lato:900,900i"
     = stylesheet_link_tag "application"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tag
@@ -14,6 +15,8 @@ html lang="en"
     #container
       = render "layouts/header"
 
-      main == yield
+      #site-body
+        main == yield
+        aside.sidebar == yield(:sidebar)
 
       = render "layouts/footer"

@@ -66,6 +66,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_decorator (0.8.0)
     activejob (5.0.2)
       activesupport (= 5.0.2)
       globalid (>= 0.3.6)
@@ -220,6 +221,7 @@ GEM
     lumberjack (1.0.11)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -227,6 +229,8 @@ GEM
     mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
+    mocha (1.2.1)
+      metaclass (~> 0.0.1)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     nenv (0.3.0)
@@ -291,6 +295,8 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    record_tag_helper (1.0.0)
+      actionview (~> 5.x)
     redcarpet (3.4.0)
     request_store (1.3.2)
     responders (2.3.0)
@@ -391,6 +397,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_decorator (~> 0.8)
   activeadmin!
   browserify-rails (~> 3.1.0)
   byebug
@@ -411,6 +418,7 @@ DEPENDENCIES
   jquery-turbolinks (~> 2.1.0)
   json!
   mini_magick (~> 4.5.1)
+  mocha
   newrelic_rpm
   paper_trail (~> 5.2.0)
   pg (~> 0.18)
@@ -418,6 +426,7 @@ DEPENDENCIES
   pundit (~> 1.1.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   raygun4ruby
+  record_tag_helper (~> 1.0)
   rspec-rails
   sass-rails (~> 5.0)
   simplecov

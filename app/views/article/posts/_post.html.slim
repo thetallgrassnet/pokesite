@@ -1,0 +1,10 @@
+= content_tag_for :article, post
+  .featured-image
+    figure = image_tag post.display_featured_image
+
+  .content
+    header
+      h1 = link_to_unless_current post.headline, post
+      == post.byline
+
+    = render post.content

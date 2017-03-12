@@ -6,13 +6,13 @@
   min-height: 100vh;
 }
 
-header, #site-nav, main, footer {
+#site-header, #site-nav, #site-body, #site-footer {
   @include flex-grid-row();
 
   margin: 0;
 }
 
-header {
+#site-header {
   @include show-for(medium);
 }
 
@@ -59,11 +59,38 @@ header {
   }
 }
 
-main {
+#site-body {
   flex-grow: 1;
 }
 
-footer {
+main {
+  @include flex-grid-column();
+
+  @include breakpoint(medium) {
+    @include flex-grid-column(9);
+  }
+}
+
+aside.sidebar {
+  @include flex-grid-column();
+  @include show-for(medium);
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+nav.pagination {
+  @include flex-grid-row();
+
+  text-align: center;
+
+  ul.pagination {
+    @include flex-grid-column();
+  }
+}
+
+#site-footer {
   font-size: 0.8rem;
   margin: 1rem 0;
 }

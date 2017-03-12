@@ -12,6 +12,8 @@ class Article::Post < ApplicationRecord
 
   mount_uploader :featured_image, FeaturedImageUploader
 
+  paginates_per 10
+
   sir_trevor_content :body
 
   scope :published, -> { where('published_at < ?', Time.now) }
@@ -28,6 +30,10 @@ class Article::Post < ApplicationRecord
 
   def to_s
     headline
+  end
+
+  def excerpt
+    body.first_block_of_type(:text)
   end
 
   private
