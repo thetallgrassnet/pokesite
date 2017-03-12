@@ -6,6 +6,8 @@ class Article::Column < ApplicationRecord
 
   friendly_id :name, use: [:slugged, :history, :reserved]
 
+  scope :with_published_posts, -> { joins(:posts).group('article_columns.id').merge(Article::Post.published).having('count(article_posts.id) > ?', 0) }
+
   validates :name,        presence: true, uniqueness: true
   validates :description, presence: true
 
