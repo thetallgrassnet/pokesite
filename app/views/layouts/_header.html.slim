@@ -20,3 +20,11 @@ header#site-header
       = link_to root_path
         = image_tag 'logo-small.png', alt: t('site.title'), 'data-interchange': "[#{image_path 'logo-small.png'}, small], [#{image_path 'logo-small@2x.png'}, retina]"
         strong.show-for-sr = t('site.title')
+    #responsive-site-nav
+      .top-bar-left
+        ul.dropdown.menu data-dropdown-menu=""
+          li
+            = link_to 'Articles', article_root_path
+            ul.vertical.menu
+              - columns_with_published_posts.each do |column|
+                li = link_to_unless_current column.name, column
