@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     root 'posts#index'
     get '(page/:page)', controller: :posts, action: :index
 
+    resources :columns, only: [] do
+      get '(page/:page)', controller: :columns, action: :show, as: ''
+    end
+
     resources :posts, only: :show
   end
 
