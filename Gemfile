@@ -87,3 +87,4 @@ group :production do
   gem 'newrelic_rpm'
   gem 'raygun4ruby'
 end
+gem 'nokogiri', '>= 1.7.1'
