@@ -6,7 +6,7 @@
     - @latest_posts.each do |post|
       li = link_to post.headline, post
 
-  h2 Latest in #{@post.column}
+  h2 Latest in #{link_to @post.column.name, @post.column}
   ul
     - @latest_in_col.each do |post|
       li = link_to post.headline, post
