@@ -1,7 +1,6 @@
 class Article::PostsController < ApplicationController
   def index
     @posts = Article::Post.published.page params[:page]
-    @columns = Article::Column.with_published_posts
   end
 
   def show
