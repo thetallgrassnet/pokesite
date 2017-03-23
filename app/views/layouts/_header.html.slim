@@ -27,4 +27,5 @@ header#site-header
             = link_to 'Articles', article_root_path
             ul.vertical.menu
               - columns_with_published_posts.each do |column|
-                li = link_to_unless_current column.name, column
+                li = link_to_unless_current column.name, column do
+                  = link_to column.name, column, class: :active
