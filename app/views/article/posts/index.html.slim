@@ -5,5 +5,5 @@
 - content_for :sidebar
   h2 Columns
   ul
-    - @columns.each do |column|
-      li = link_to column
+    - columns_with_published_posts.each do |column|
+      li = link_to_unless_current column.name, column
