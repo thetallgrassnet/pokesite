@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'envied', github: 'monterail/envied'
+gem 'envied', '~> 0.9.0'
 
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'devise', '~> 4.2.0'
