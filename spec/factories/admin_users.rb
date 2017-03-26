@@ -10,7 +10,7 @@ FactoryGirl.define do
     end
 
     trait :author do
-      columns { create_list(:article_column) }
+      article_columns { create_list(:article_column, 1) }
     end
   end
 end
