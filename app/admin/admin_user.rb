@@ -20,6 +20,30 @@ ActiveAdmin.register AdminUser do
   filter :sign_in_count
   filter :current_sign_in_at
 
+  show do
+    attributes_table do
+      row :email
+      row :superuser
+      row :created_at
+      row :updated_at
+      row :current_sign_in_at
+      row :current_sign_in_ip
+      row :last_sign_in_at
+      row :last_sign_in_ip
+      row :reset_password_sent_at
+    end
+
+    active_admin_comments
+  end
+
+  sidebar "Columns", only: :show do
+    ul do
+      admin_user.article_columns.each do |column|
+        li link_to(column, admin_article_column_path(column))
+      end
+    end
+  end
+
   form do |f|
     f.inputs "Admin Details" do
       f.input :name
