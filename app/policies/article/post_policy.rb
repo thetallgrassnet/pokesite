@@ -1,6 +1,8 @@
 class Article::PostPolicy < ApplicationPolicy
   def create?
-    user.superuser? or user.article_columns.include?(record.column)
+    user.superuser? or
+      (record and user.article_columns.include?(record.column)) or
+      (user.article_columns.any? and not record)
   end
 
   def update?
