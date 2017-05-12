@@ -1,8 +1,7 @@
-#= require active_admin/base
+#= require sir-trevor/build/sir-trevor.min.js
 
-SirTrevor = require('sir-trevor')
-
-$ ->
+document.addEventListener 'DOMContentLoaded', ->
+  console.log SirTrevor
   SirTrevor.setDefaults {
     ajaxOptions: {
       headers: {

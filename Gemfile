@@ -4,7 +4,7 @@ ruby '2.4.1'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.1.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -34,21 +34,20 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'envied', '~> 0.9.0'
 
-gem 'activeadmin', github: 'activeadmin/activeadmin'
-gem 'devise', '~> 4.2.0'
-gem 'paper_trail', '~> 5.2.0'
+gem 'activeadmin', '~> 1.0'
+gem 'devise', github: 'plataformatec/devise'
+gem 'paper_trail', '~> 7.0'
 gem 'pundit', '~> 1.1.0'
 gem 'friendly_id', github: 'norman/friendly_id'
-gem 'carrierwave', '~> 1.0.0.beta'
-gem 'mini_magick', '~> 4.5.1'
-gem 'fog-aws', '~> 0.11'
-gem 'browserify-rails', '~> 3.1.0'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick', '~> 4.7'
+gem 'fog-aws', '~> 1.0'
 gem 'sir_trevor_rails', '~> 0.5.1'
 gem 'record_tag_helper', '~> 1.0'
 gem 'active_decorator', '~> 0.8'
 
 gem 'slim-rails', '~> 3.1.1'
-gem 'foundation-rails', '~> 6.2.3'
+gem 'foundation-rails', '~> 6.3'
 gem 'jquery-turbolinks', '~> 2.1.0'
 
 gem 'json', github: 'flori/json', branch: 'v1.8'
