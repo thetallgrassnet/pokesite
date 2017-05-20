@@ -1,5 +1,6 @@
 {
   "name": "pokesite",
+  "stack": "heroku-16",
   "scripts": {
     "postdeploy": "bin/rake db:schema:load db:seed"
   },
