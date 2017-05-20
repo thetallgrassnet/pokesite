@@ -1,27 +1,9 @@
 GIT
-  remote: https://github.com/flori/json.git
-  revision: 7f4cfd853f2c919d854fb95548a19980feff17e8
-  branch: v1.8
-  specs:
-    json (1.8.6)
-
-GIT
   remote: https://github.com/norman/friendly_id.git
   revision: 718b1bcad8e47ccde8a4b559b734505a49d313a7
   specs:
     friendly_id (5.2.1)
       activerecord (>= 4.0.0)
-
-GIT
-  remote: https://github.com/plataformatec/devise.git
-  revision: 079ed3b6f8b671acde2dd630d28d21adb010fb3a
-  specs:
-    devise (4.3.0)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.2)
-      responders
-      warden (~> 1.2.3)
 
 GEM
   remote: https://rubygems.org/
@@ -111,6 +93,12 @@ GEM
     concurrent-ruby (1.0.5)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
+    devise (4.3.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.2)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.3)
     docile (1.1.5)
     envied (0.9.0)
@@ -191,6 +179,7 @@ GEM
       turbolinks
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    json (2.1.0)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
@@ -396,7 +385,7 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   codeclimate-test-reporter
   coffee-rails (~> 4.2)
-  devise!
+  devise (~> 4.3)
   envied (~> 0.9.0)
   factory_girl_rails
   fog-aws (~> 1.0)
@@ -408,7 +397,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks (~> 2.1.0)
-  json!
   mini_magick (~> 4.7)
   mocha
   newrelic_rpm
@@ -433,9 +421,8 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console
 
-
 RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.14.6
+   1.15.0
