@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'envied', '~> 0.9.0'
 
 gem 'activeadmin', '~> 1.0'
-gem 'devise', github: 'plataformatec/devise'
+gem 'devise', '~> 4.3'
 gem 'paper_trail', '~> 7.0'
 gem 'pundit', '~> 1.1.0'
 gem 'friendly_id', github: 'norman/friendly_id'
@@ -49,8 +49,6 @@ gem 'active_decorator', '~> 0.8'
 gem 'slim-rails', '~> 3.1.1'
 gem 'foundation-rails', '~> 6.3'
 gem 'jquery-turbolinks', '~> 2.1.0'
-
-gem 'json', github: 'flori/json', branch: 'v1.8'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
