@@ -22,6 +22,7 @@
 # Ignore npm and precompiled assets.
 /node_modules
 /public/assets
+/public/packs
 
 # Ignore coverage reports.
 /coverage
