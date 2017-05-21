@@ -69,14 +69,10 @@
 
 main {
   @include flex-grid-column();
-
-  @include breakpoint(medium) {
-    @include flex-grid-column(9);
-  }
 }
 
 aside.sidebar {
-  @include flex-grid-column();
+  @include flex-grid-column(3);
   @include show-for(medium);
 
   h2 {
