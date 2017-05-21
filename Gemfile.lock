@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/norman/friendly_id.git
-  revision: 718b1bcad8e47ccde8a4b559b734505a49d313a7
-  specs:
-    friendly_id (5.2.1)
-      activerecord (>= 4.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -136,6 +129,8 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
       sprockets-es6 (>= 0.9.0)
+    friendly_id (5.2.1)
+      activerecord (>= 4.0.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     guard (2.14.1)
@@ -371,6 +366,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webpacker (1.2)
+      activesupport (>= 4.2)
+      multi_json (~> 1.2)
+      railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -390,7 +389,7 @@ DEPENDENCIES
   factory_girl_rails
   fog-aws (~> 1.0)
   foundation-rails (~> 6.3)
-  friendly_id!
+  friendly_id (>= 5.2.1)
   guard
   guard-rails
   guard-rspec
@@ -420,6 +419,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console
+  webpacker (~> 1.2)
 
 RUBY VERSION
    ruby 2.4.1p111
