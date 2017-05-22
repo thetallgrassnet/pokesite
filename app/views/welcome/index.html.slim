@@ -1,6 +1,6 @@
 ul#featured_posts
   - for post in @featured_posts
-    li.featured_post = link_to post do
+    li.article_post = link_to post do
       = image_tag post.featured_image.small.url
       .details
         h1 = post.headline
@@ -10,6 +10,14 @@ ul#featured_posts
           = time_tag post.published_at, post.published_at.strftime('%b %-d \'%y %I:%M %p'), pubdate: true
         p.subhead = post.subhead
 
-ul#non_featured_posts
-  - for post in @non_featured_posts
-    li = link_to post.headline, post
+.callouts
+  .callout
+    h2 Latest Articles
+    ul#non_featured_posts
+      - for post in @non_featured_posts
+        li.article_post
+          = link_to post.headline, post
+          .byline
+            = post.column.name
+            = " – "
+            = time_tag post.published_at, post.published_at.strftime('%b %-d \'%y %I:%M %p'), pubdate: true
