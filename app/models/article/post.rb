@@ -16,8 +16,8 @@ class Article::Post < ApplicationRecord
 
   sir_trevor_content :body
 
-  scope :published, -> { where('published_at < ?', Time.now) }
-  scope :featured,  -> { published.where(featured: true) }
+  scope :published, -> { where('published_at < ?', Time.now).order('published_at DESC') }
+  scope :featured,  -> { published.where(featured: true).limit(6) }
 
   before_save :publish_if_publish_now
 

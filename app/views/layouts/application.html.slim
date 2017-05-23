@@ -17,6 +17,8 @@ html lang="en"
 
       #site-body
         main == yield
-        aside.sidebar == yield(:sidebar)
+
+        - if content_for?(:sidebar)
+          aside.sidebar == yield(:sidebar)
 
       = render "layouts/footer"
