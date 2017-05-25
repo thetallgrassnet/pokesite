@@ -1,18 +1,19 @@
 #= require sir-trevor/build/sir-trevor.min.js
 
 document.addEventListener 'DOMContentLoaded', ->
-  SirTrevor.setDefaults {
-    ajaxOptions: {
-      headers: {
-        "X-CSRF-Token": document.querySelector('meta[name=csrf-token]').getAttribute('content')
+  if document.querySelector('.js-st-instance')
+    SirTrevor.setDefaults {
+      ajaxOptions: {
+        headers: {
+          "X-CSRF-Token": document.querySelector('meta[name=csrf-token]').getAttribute('content')
+        }
+        credentials: 'same-origin'
       }
-      credentials: 'same-origin'
+      defaultType: 'text'
+      iconUrl: '<%= asset_path "sir-trevor/build/sir-trevor-icons.svg" %>'
+      uploadUrl: '/admin/editor_images'
     }
-    defaultType: 'text'
-    iconUrl: '<%= asset_path "sir-trevor/build/sir-trevor-icons.svg" %>'
-    uploadUrl: '/admin/editor_images'
-  }
 
-  editor = new SirTrevor.Editor {
-    el: document.querySelector('.js-st-instance')
-  }
+    editor = new SirTrevor.Editor {
+      el: document.querySelector('.js-st-instance')
+    }
