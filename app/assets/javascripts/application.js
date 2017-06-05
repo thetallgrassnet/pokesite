@@ -20,4 +20,8 @@
 
 $(document).on('turbolinks:load', function() {
   $(function(){ $(document).foundation(); });
+
+  [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  });
 });
