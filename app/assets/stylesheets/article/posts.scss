@@ -46,3 +46,7 @@ main > .article_post {
     }
   }
 }
+
+.st__content-block--video {
+  @include responsive-embed(widescreen);
+}
