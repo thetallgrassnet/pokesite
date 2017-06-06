@@ -13,6 +13,6 @@ $(document).on('turbolinks:load', function () {
   document.querySelectorAll('time').forEach(function (el, i, listObj) {
     let time = el.getAttribute('datetime');
     let format = el.getAttribute('data-format');
-    el.textContent = moment(time).format(el.getAttribute(format));
+    el.textContent = moment(time).format(format);
   });
 });
