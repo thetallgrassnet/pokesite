@@ -11,7 +11,6 @@ const moment = require('moment');
 
 $(document).on('turbolinks:load', function () {
   document.querySelectorAll('time').forEach(function (el, i, listObj) {
-    console.log(el.textContent);
     let time = el.getAttribute('datetime');
     el.textContent = moment(time).format(el.getAttribute('data-format'));
   });
