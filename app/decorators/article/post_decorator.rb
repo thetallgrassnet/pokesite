@@ -1,3 +1,4 @@
+# coding: utf-8
 module Article::PostDecorator
   def byline
     content_tag(:p, class: 'byline') do
@@ -20,14 +21,14 @@ module Article::PostDecorator
   end
 
   def full_byline
-    raw("Posted by #{author.name} in #{link_to column.name, column} on #{time_tag published_at, published_at.strftime('%A, %B %-d, %Y at %I:%M %p'), pubdate: true}")
+    raw("Posted by #{author.name} in #{link_to column.name, column} on #{time_tag published_at, published_at.strftime(long_strftime), pubdate: true, "data-format": "LLLL"}")
   end
 
   def responsive_byline
     capture do
       concat content_tag(:span, full_byline, class: 'show-for-medium')
       concat(content_tag(:span, class: 'hide-for-medium', 'aria-label' => strip_tags(full_byline)) do
-        raw("#{link_to column.name, column} — #{time_tag published_at, published_at.strftime('%b %-d \'%y %I:%M %p'), pubdate: true}")
+        raw("#{link_to column.name, column} — #{time_tag published_at, published_at.strftime(short_strftime), pubdate: true, "data-format": "llll"}")
       end)
     end
   end

@@ -7,4 +7,12 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker')
+const moment = require('moment');
+
+$(document).on('turbolinks:load', function () {
+  document.querySelectorAll('time').forEach(function (el, i, listObj) {
+    let time = el.getAttribute('datetime');
+    let format = el.getAttribute('data-format');
+    el.textContent = moment(time).format(el.getAttribute(format));
+  });
+});

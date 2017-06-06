@@ -7,7 +7,7 @@ ul#featured_posts
         p.byline
           = post.column.name
           = " – "
-          = time_tag post.published_at, post.published_at.strftime('%b %-d \'%y %I:%M %p'), pubdate: true
+          = time_tag post.published_at, post.published_at.strftime(short_strftime), pubdate: true, "data-format": "llll"
         p.subhead = post.subhead
 
 .callouts
@@ -20,7 +20,7 @@ ul#featured_posts
           .byline
             = post.column.name
             = " – "
-            = time_tag post.published_at, post.published_at.strftime('%b %-d \'%y %I:%M %p'), pubdate: true
+            = time_tag post.published_at, post.published_at.strftime(short_strftime), pubdate: true, "data-format": "llll"
 
   .callout
     ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3960000263279832" data-ad-slot="6233569905" data-ad-format="auto"
