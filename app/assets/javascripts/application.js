@@ -18,10 +18,11 @@
 //= require layout
 //= require welcome
 
-$(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function () {
   $(function(){ $(document).foundation(); });
 
-  [].forEach.call(document.querySelectorAll('.adsbygoogle'), function(){
+  document.querySelectorAll('.adsbygoogle').forEach(function (el, i, listObj) {
+    if (el.offsetWidth === 0) { return; }
     (adsbygoogle = window.adsbygoogle || []).push({});
   });
 });
