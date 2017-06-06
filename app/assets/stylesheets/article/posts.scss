@@ -50,3 +50,17 @@ main > .article_post {
 .st__content-block--video, .st__content-block--image {
   @include responsive-embed(widescreen);
 }
+
+.st__content-block--image {
+  img {
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
