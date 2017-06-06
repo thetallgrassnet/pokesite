@@ -5,6 +5,8 @@
   .content
     header
       h1 = link_to_unless_current post.headline, { controller: 'article/posts', action: 'show', id: post.slug }
+      h2.subheader
+        small = post.subhead
       == post.byline
 
     = render post.content
