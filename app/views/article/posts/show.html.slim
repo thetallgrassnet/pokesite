@@ -4,6 +4,8 @@
   meta property="og:title" content=@post.headline
   meta property="og:description" content=@post.subhead
   meta property="og:image" content=@post.featured_image
+  - if Rails.env.production?
+    meta property="fb:app_id" content=ENVied.FB_APP_ID
 
 - content_for :title
   = @post.headline + ' – ' + @post.column.name
