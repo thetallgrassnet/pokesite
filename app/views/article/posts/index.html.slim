@@ -1,3 +1,6 @@
+- content_for :title
+  = @column ? @column.name : 'Articles'
+
 - if @column
   h1 = @column.name
 
