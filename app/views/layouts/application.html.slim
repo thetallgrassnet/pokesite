@@ -13,6 +13,8 @@ html lang="en"
     = javascript_pack_tag "application"
     = csrf_meta_tag
 
+    == yield(:head) if content_for?(:head)
+
   body
     #container
       = render "layouts/header"
