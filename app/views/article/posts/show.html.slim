@@ -1,3 +1,6 @@
+- content_for :title
+  = @post.headline + ' – ' + @post.column.name
+
 = render @post
 
 - content_for :sidebar
