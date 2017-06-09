@@ -26,14 +26,20 @@ before_script:
 - bin/rails db:setup
 jobs:
   include:
-  - stage: pre-test
-    script: "./cc-test-reporter before-build"
   - stage: test
-    script: bin/rspec
+    script:
+    - bin/rspec
+    - ./cc-test-reporter format-coverage --output coverage/codeclimate.rpsec.json
+    - aws s3 cp coverage/codeclimate.rspec.json s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT/codeclimate.rspec.json
   - stage: test
-    script: bundle exec cucumber
+    script:
+    - bundle exec cucumber
+    - ./cc-test-reporter format-coverage --output coverage/codeclimate.cucumber.json
+    - aws s3 cp coverage/codeclimate.cucumber.json s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT/codeclimate.cucumber.json
   - stage: post-test
-    script: "./cc-test-reporter after-build"
+    script:
+    - aws s3 sync s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT coverage/
+    - ./cc-test-reporter sum-coverage --output - coverage/codeclimate.*.json | ./cc-test-reporter upload-coverage
   - stage: post-test
     script: greenkeeper-lockfile-upload
 notifications:
