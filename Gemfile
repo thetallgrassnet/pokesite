@@ -74,6 +74,8 @@ group :development do
 end
 
 group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'mocha'
   gem 'simplecov'
   gem 'codeclimate-test-reporter'
