@@ -4,7 +4,7 @@ class TestImageUploader < CarrierWave::Uploader::Base
   include Imageable
 end
 
-describe TestImageUploader do
+RSpec.describe TestImageUploader do
   include CarrierWave::Test::Matchers
 
   let(:post)     { FactoryGirl.create(:article_post) }

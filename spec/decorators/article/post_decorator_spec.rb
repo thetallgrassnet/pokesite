@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Article::PostDecorator do
+RSpec.describe Article::PostDecorator do
   include CarrierWave::Test::Matchers
 
   let(:post) { FactoryGirl.build(:article_post).extend Article::PostDecorator }

@@ -4,11 +4,11 @@ class TestUploader < CarrierWave::Uploader::Base
   include Uploadable
 end
 
-describe Uploadable do
+RSpec.describe Uploadable do
   it { expect { class NotAnUploader; include Uploadable; end }.to raise_error 'must be included in a CarrierWave uploader' }
 end
 
-describe TestUploader do
+RSpec.describe TestUploader do
   include CarrierWave::Test::Matchers
 
   let(:model)    { FactoryGirl.create(:article_post) }

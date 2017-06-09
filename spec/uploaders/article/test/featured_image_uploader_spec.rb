@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Article::Post::FeaturedImageUploader do
+RSpec.describe Article::Post::FeaturedImageUploader do
   include CarrierWave::Test::Matchers
 
   let(:post)     { FactoryGirl.create(:article_post) }

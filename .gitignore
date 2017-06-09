@@ -26,6 +26,7 @@
 
 # Ignore coverage reports.
 /coverage
+/spec/examples.txt
 
 # Ignore uploads.
 /public/uploads
