@@ -27,14 +27,12 @@ before_script:
 jobs:
   include:
   - stage: test
-    script:
-    - bin/rspec
+    script: bin/rspec
     after_script:
     - ./cc-test-reporter format-coverage --output coverage/codeclimate.rspec.json
     - aws s3 cp coverage/codeclimate.rspec.json s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT/codeclimate.rspec.json
   - stage: test
-    script:
-    - bundle exec cucumber
+    script: bin/cucumber
     after_script:
     - ./cc-test-reporter format-coverage --output coverage/codeclimate.cucumber.json
     - aws s3 cp coverage/codeclimate.cucumber.json s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT/codeclimate.cucumber.json
