@@ -31,18 +31,20 @@ jobs:
     - bin/rspec
     after_script:
     - ./cc-test-reporter format-coverage --output coverage/codeclimate.rpsec.json
-    - aws s3 sync coverage/ s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT
+    - aws s3 cp coverage/codeclimate.rspec.json s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT/codeclimate.rspec.json
   - stage: test
     script:
     - bundle exec cucumber
     after_script:
     - ./cc-test-reporter format-coverage --output coverage/codeclimate.cucumber.json
-    - aws s3 sync coverage/ s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT
+    - aws s3 cp coverage/codeclimate.cucumber.json s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT/codeclimate.cucumber.json
   - stage: post-test
     script: skip
     after_script:
     - aws s3 sync s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT coverage/
-    - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter sum-coverage --output - coverage/codeclimate.*.json | ./cc-test-reporter upload-coverage
+    - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json
+    - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter upload-coverage; fi
+    - aws s3 rm --recursive s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT
   - stage: post-test
     script: skip
     after_script: greenkeeper-lockfile-upload
