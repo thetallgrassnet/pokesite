@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe EditorImageUploader do
+RSpec.describe EditorImageUploader do
   include CarrierWave::Test::Matchers
 
   let(:editor_image) { FactoryGirl.create(:editor_image) }
