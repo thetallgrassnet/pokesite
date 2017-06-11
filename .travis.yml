@@ -32,6 +32,7 @@ jobs:
     - ./cc-test-reporter format-coverage --output coverage/codeclimate.rspec.json
     - aws s3 cp coverage/codeclimate.rspec.json s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT/codeclimate.rspec.json
   - stage: test
+    before_script: bin/rails assets:precompile
     script: bin/cucumber
     after_script:
     - ./cc-test-reporter format-coverage --output coverage/codeclimate.cucumber.json
