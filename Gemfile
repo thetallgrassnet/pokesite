@@ -79,6 +79,7 @@ group :test do
   gem 'mocha'
   gem 'simplecov'
   gem 'poltergeist'
+  gem 'launchy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
