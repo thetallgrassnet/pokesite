@@ -78,6 +78,7 @@ group :test do
   gem 'database_cleaner'
   gem 'mocha'
   gem 'simplecov'
+  gem 'poltergeist'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
