@@ -13,6 +13,8 @@ addons:
     - yarn
   postgresql: '9.6'
 before_install:
+- nvm install 6
+- nvm use 6
 - pip install --user awscli
 - yarn global add greenkeeper-lockfile@1
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
