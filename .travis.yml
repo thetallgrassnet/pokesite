@@ -2,8 +2,10 @@ dist: trusty
 sudo: false
 language: ruby
 cache:
-- bundler
-- yarn
+  directories:
+  - node_modules
+  - public/assets
+  - vendor/bundle
 addons:
   apt:
     sources:
@@ -13,6 +15,8 @@ addons:
     - yarn
   postgresql: '9.6'
 before_install:
+- nvm install 6
+- nvm use 6
 - pip install --user awscli
 - yarn global add greenkeeper-lockfile@1
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -24,6 +28,7 @@ before_script:
 - greenkeeper-lockfile-update
 - cp config/database.travis.yml config/database.yml
 - bin/rails db:setup
+- bin/rails assets:precompile
 jobs:
   include:
   - stage: test
