@@ -26,6 +26,7 @@ before_script:
 - greenkeeper-lockfile-update
 - cp config/database.travis.yml config/database.yml
 - bin/rails db:setup
+- bin/rails assets:precompile
 jobs:
   include:
   - stage: test
@@ -34,9 +35,7 @@ jobs:
     - ./cc-test-reporter format-coverage --output coverage/codeclimate.rspec.json
     - aws s3 cp coverage/codeclimate.rspec.json s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT/codeclimate.rspec.json
   - stage: test
-    script:
-    - bin/rails assets:precompile
-    - bin/cucumber
+    script: bin/cucumber
     after_script:
     - ./cc-test-reporter format-coverage --output coverage/codeclimate.cucumber.json
     - aws s3 cp coverage/codeclimate.cucumber.json s3://ttgn-pokesite-coverage/$TRAVIS_COMMIT/codeclimate.cucumber.json
