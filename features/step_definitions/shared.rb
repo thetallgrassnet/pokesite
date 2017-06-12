@@ -1,5 +1,5 @@
 When(/^I visit the (.*) path$/) do |route|
-  visit eval(route.gsub(' ', '_') + '_path')
+  visit eval(route.tr(' ', '_') + '_path')
 end
 
 When(/^I click "([^"]*)"$/) do |arg|
