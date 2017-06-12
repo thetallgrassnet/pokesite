@@ -31,5 +31,4 @@ When(/^I fill in the article post form$/) do
 
   # fill_in id: 'article_post_body', with: post.body
   find('.st-text-block p').set("This is some text.")
-  save_and_open_screenshot
 end
