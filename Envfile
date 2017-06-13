@@ -1,11 +1,12 @@
 enable_defaults! { ENV['RACK_ENV'] != 'production' }
 
+variable :FB_APP_ID, :string, default: ''
+
 group :production do
   variable :AWS_ACCESS_KEY_ID
   variable :AWS_REGION
   variable :AWS_S3_BUCKET
   variable :AWS_SECRET_ACCESS_KEY
-  variable :FB_APP_ID
   variable :NEW_RELIC_LICENSE_KEY
   variable :NEW_RELIC_LOG
   variable :RAILS_LOG_TO_STDOUT
