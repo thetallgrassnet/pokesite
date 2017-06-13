@@ -60,9 +60,7 @@
 .callout {
   @include flex-grid-column();
 
-  &:nth-child(odd) {
-    border: 0;
-  }
+  border: 0;
 
   h2 {
     font-size: 1.5rem;
