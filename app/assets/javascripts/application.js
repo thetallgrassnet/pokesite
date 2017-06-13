@@ -18,6 +18,7 @@
 //= require layout
 //= require welcome
 //= require facebook
+//= require twitter
 
 $(document).on('turbolinks:load', function () {
   $(function(){ $(document).foundation(); });
