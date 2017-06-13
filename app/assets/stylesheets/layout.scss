@@ -99,6 +99,17 @@ nav.pagination {
   @include flex-grid-column();
 }
 
+.fb-page {
+  @extend .float-center;
+
+  display: block !important;
+  width: 340px;
+}
+
 .ad {
   @include flex-grid-column();
+}
+
+ins.adsbygoogle {
+  margin-top: 1rem;
 }
