@@ -7,6 +7,9 @@ group :production do
   variable :AWS_REGION
   variable :AWS_S3_BUCKET
   variable :AWS_SECRET_ACCESS_KEY
+  variable :MEMCACHIER_SERVERS
+  variable :MEMCACHIER_USERNAME
+  variable :MEMCACHIER_PASSWORD
   variable :NEW_RELIC_LICENSE_KEY
   variable :NEW_RELIC_LOG
   variable :RAILS_LOG_TO_STDOUT
