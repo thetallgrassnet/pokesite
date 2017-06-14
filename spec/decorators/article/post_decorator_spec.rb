@@ -10,14 +10,31 @@ RSpec.describe Article::PostDecorator do
   describe '#content' do
     subject { post.content }
 
-    context 'when on show' do
-      before { expect_action('show') }
-      it     { is_expected.to be_an(Array) }
+    context 'when on posts#show' do
+      before do
+        stub_controller('posts')
+        stub_action('show')
+      end
+
+      it { is_expected.to be_an(Array) }
     end
 
-    context 'when on index' do
-      before { expect_action('index') }
-      it     { is_expected.to be_a(SirTrevorRails::Blocks::TextBlock) }
+    context 'when on posts#index' do
+      before do
+        stub_controller('posts')
+        stub_action('index')
+      end
+
+      it { is_expected.to be_a(SirTrevorRails::Blocks::TextBlock) }
+    end
+
+    context 'when on columns#show' do
+      before do
+        stub_controller('columns')
+        stub_action('show')
+      end
+
+      it { is_expected.to be_a(SirTrevorRails::Blocks::TextBlock) }
     end
   end
 
@@ -27,18 +44,39 @@ RSpec.describe Article::PostDecorator do
 
     subject { post.display_featured_image }
 
-    context 'when on show' do
-      before { expect_action('show') }
-      it     { is_expected.to have_dimensions(1280, 720) }
+    context 'when on posts#show' do
+      before do
+        stub_controller('posts')
+        stub_action('show')
+      end
+
+      it { is_expected.to have_dimensions(1280, 720) }
     end
 
-    context 'when on index' do
-      before { expect_action('index') }
-      it     { is_expected.to be_no_larger_than(200, 200) }
+    context 'when on posts#index' do
+      before do
+        stub_controller('posts')
+        stub_action('index')
+      end
+
+      it { is_expected.to be_no_larger_than(200, 200) }
+    end
+
+    context 'when on columns#show' do
+      before do
+        stub_controller('columns')
+        stub_action('show')
+      end
+
+      it { is_expected.to be_no_larger_than(200, 200) }
     end
   end
 
-  def expect_action(action)
-    post.expects(:action_name).returns(action)
+  def stub_action(action)
+    post.stubs(:action_name).returns(action)
+  end
+
+  def stub_controller(controller)
+    post.stubs(:controller_name).returns(controller)
   end
 end

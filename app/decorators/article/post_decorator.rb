@@ -2,22 +2,22 @@
 module Article::PostDecorator
   def byline
     content_tag(:p, class: 'byline') do
-      show? ? full_byline : responsive_byline
+      index? ? responsive_byline : full_byline
     end
   end
 
   def content
-    show? ? body : excerpt
+    index? ? excerpt : body
   end
 
   def display_featured_image
-    show? ? featured_image : featured_image.thumb
+    index? ? featured_image.thumb : featured_image
   end
 
   private
 
-  def show?
-    action_name == 'show'
+  def index?
+    action_name == 'index' or controller_name == 'columns'
   end
 
   def full_byline

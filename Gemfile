@@ -89,5 +89,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'newrelic_rpm'
   gem 'raygun4ruby'
+  gem 'dalli'
 end
 gem 'nokogiri', '>= 1.7.1'

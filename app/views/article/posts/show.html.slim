@@ -10,7 +10,7 @@
 - content_for :title
   = @post.headline + ' – ' + @post.column.name
 
-= render @post
+= render @post, cached: true
 
 - content_for :sidebar
   h2 Latest Articles

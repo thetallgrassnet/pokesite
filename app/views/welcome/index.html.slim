@@ -1,26 +1,28 @@
 ul#featured_posts
   - for post in @featured_posts
-    li.article_post = link_to post do
-      = image_tag post.featured_image.small.url
-      .details
-        h1 = post.headline
-        p.byline
-          = post.column.name
-          = " – "
-          = time_tag post.published_at, post.published_at.strftime(short_strftime), pubdate: true, "data-format": "llll"
-        p.subhead = post.subhead
+    - cache post do
+      li.article_post = link_to post do
+        = image_tag post.featured_image.small.url
+        .details
+          h1 = post.headline
+          p.byline
+            = post.column.name
+            = " – "
+            = time_tag post.published_at, post.published_at.strftime(short_strftime), pubdate: true, "data-format": "llll"
+          p.subhead = post.subhead
 
 .callouts
   .callout
     h2 Latest Articles
     ul#non_featured_posts
       - for post in @non_featured_posts
-        li.article_post
-          = link_to post.headline, post
-          .byline
-            = post.column.name
-            = " – "
-            = time_tag post.published_at, post.published_at.strftime(short_strftime), pubdate: true, "data-format": "llll"
+        - cache post do
+          li.article_post
+            = link_to post.headline, post
+            .byline
+              = post.column.name
+              = " – "
+              = time_tag post.published_at, post.published_at.strftime(short_strftime), pubdate: true, "data-format": "llll"
 
   .callout
     .fb-page data-href="https://www.facebook.com/thetallgrassnet/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"

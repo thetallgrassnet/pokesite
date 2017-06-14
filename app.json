@@ -47,7 +47,8 @@
     },
     "raygun",
     "heroku-redis",
-    "newrelic"
+    "newrelic",
+    "memcachier"
   ],
   "buildpacks": [
     {
