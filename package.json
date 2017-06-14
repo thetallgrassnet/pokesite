@@ -15,7 +15,7 @@
     "moment": "^2.18.1",
     "node-sass": "^4.5.3",
     "path-complete-extname": "^0.1.0",
-    "postcss-loader": "^2.0.5",
+    "postcss-loader": "^2.0.6",
     "postcss-smart-import": "^0.7.0",
     "precss": "^1.4.0",
     "rails-erb-loader": "^5.0.1",
