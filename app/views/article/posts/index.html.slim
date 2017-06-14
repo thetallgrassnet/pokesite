@@ -4,7 +4,7 @@
 - if @column
   h1 = @column.name
 
-.posts-list = render @posts
+.posts-list = render @posts, cached: true
 
 = paginate @posts, theme: 'foundation'
 
