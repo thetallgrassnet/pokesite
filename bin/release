@@ -2,4 +2,7 @@
 
 BASEDIR=$(dirname "$0")
 cd $BASEDIR/..
-bin/rails db:migrate
+
+if [ "${HEROKU_PARENT_APP_NAME:-}" != "ttgn-pokesite-staging" ]; then
+  bin/rails db:migrate
+fi
