@@ -1,6 +1,6 @@
 require 'securerandom'
 
-exit 1 if Rails.env.production? and not ENVied.HEROKU_PARENT_APP_NAME == 'ttgn-pokesite-staging'
+exit 1 if Rails.env.production? and not ENV['HEROKU_PARENT_APP_NAME'] == 'ttgn-pokesite-staging'
 
 AdminUser.create! name: 'Superuser', email: 'superuser@thetallgrass.net', password: SecureRandom.base64(12), superuser: true
 
