@@ -27,7 +27,7 @@ install:
 before_script:
 - greenkeeper-lockfile-update
 - cp config/database.travis.yml config/database.yml
-- bin/rails db:setup
+- bin/rails db:create db:schema:load
 - bin/rails assets:precompile
 jobs:
   include:
