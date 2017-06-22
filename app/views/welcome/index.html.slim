@@ -16,13 +16,12 @@ ul#featured_posts
     h2 Latest Articles
     ul#non_featured_posts
       - for post in @non_featured_posts
-        - cache post do
-          li.article_post
-            = link_to post.headline, post
-            .byline
-              = post.column.name
-              = " – "
-              = time_tag post.published_at, post.published_at.strftime(short_strftime), pubdate: true, "data-format": "llll"
+        li.article_post
+          = link_to post.headline, post
+          .byline
+            = post.column.name
+            = " – "
+            = time_tag post.published_at, post.published_at.strftime(short_strftime), pubdate: true, "data-format": "llll"
 
   .callout
     .fb-page data-href="https://www.facebook.com/thetallgrassnet/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"
