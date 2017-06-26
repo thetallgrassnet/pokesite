@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170618033456) do
+ActiveRecord::Schema.define(version: 20170625035410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,20 @@ ActiveRecord::Schema.define(version: 20170618033456) do
 
   create_table "editor_images", id: :serial, force: :cascade do |t|
     t.string "editor_image"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "featured_image"
+    t.integer "event_type"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "location"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
