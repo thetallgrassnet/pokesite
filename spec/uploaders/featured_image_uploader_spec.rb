@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe Article::Post::FeaturedImageUploader do
+RSpec.describe FeaturedImageUploader do
   include CarrierWave::Test::Matchers
 
   let(:post)     { FactoryGirl.create(:article_post) }
   let(:image)    { Rails.root.join('spec', 'support', 'assets', 'featured_image.png') }
-  let(:uploader) { Article::Post::FeaturedImageUploader.new(post) }
+  let(:uploader) { FeaturedImageUploader.new(post) }
 
   before do
-    Article::Post::FeaturedImageUploader.enable_processing = true
+    FeaturedImageUploader.enable_processing = true
     File.open(image) { |f| uploader.store!(f) }
   end
 
   after do
-    Article::Post::FeaturedImageUploader.enable_processing = false
+    FeaturedImageUploader.enable_processing = false
     uploader.remove!
   end
 
