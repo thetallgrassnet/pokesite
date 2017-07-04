@@ -39,8 +39,8 @@ RSpec.describe Article::PostDecorator do
   end
 
   describe '#display_featured_image' do
-    before { Article::Post::FeaturedImageUploader.enable_processing = true }
-    after  { Article::Post::FeaturedImageUploader.enable_processing = false }
+    before { FeaturedImageUploader.enable_processing = true }
+    after  { FeaturedImageUploader.enable_processing = false }
 
     subject { post.display_featured_image }
 
