@@ -48,7 +48,7 @@ gem 'active_decorator', '~> 0.8'
 
 gem 'webpacker', '~> 1.2'
 gem 'slim-rails', '~> 3.1.1'
-gem 'foundation-rails', '~> 6.3'
+gem 'foundation-rails', '~> 6.3.0'
 gem 'jquery-turbolinks', '~> 2.1.0'
 
 group :development, :test do
