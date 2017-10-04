@@ -46,7 +46,7 @@ gem 'sir_trevor_rails', '~> 0.5.1'
 gem 'record_tag_helper', '~> 1.0'
 gem 'active_decorator', '~> 0.8'
 
-gem 'webpacker', '~> 1.2'
+gem 'webpacker', '~> 3.0'
 gem 'slim-rails', '~> 3.1.1'
 gem 'foundation-rails', '~> 6.3.0'
 gem 'jquery-turbolinks', '~> 2.1.0'
