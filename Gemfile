@@ -36,7 +36,7 @@ gem 'envied', '~> 0.9.0'
 
 gem 'activeadmin', '~> 1.0'
 gem 'devise', '~> 4.3'
-gem 'paper_trail', '~> 7.0'
+gem 'paper_trail', '~> 8.0'
 gem 'pundit', '~> 1.1.0'
 gem 'friendly_id', '>= 5.2.1'
 gem 'carrierwave', '~> 1.0'
