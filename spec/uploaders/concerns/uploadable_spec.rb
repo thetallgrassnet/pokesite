@@ -11,7 +11,7 @@ end
 RSpec.describe TestUploader do
   include CarrierWave::Test::Matchers
 
-  let(:model)    { FactoryGirl.create(:article_post) }
+  let(:model)    { FactoryBot.create(:article_post) }
   let(:file)     { Rails.root.join('spec', 'support', 'assets', 'featured_image.png') }
   let(:uploader) { TestUploader.new(model) }
 

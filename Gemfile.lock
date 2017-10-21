@@ -127,10 +127,10 @@ GEM
     erubi (1.7.0)
     excon (0.58.0)
     execjs (2.7.0)
-    factory_girl (4.8.2)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.8.2)
-      factory_girl (~> 4.8.2)
+    factory_bot_rails (4.8.2)
+      factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
     ffi (1.9.18)
     fog-aws (1.4.1)
@@ -430,7 +430,7 @@ DEPENDENCIES
   devise (~> 4.3)
   dotenv-rails
   envied (~> 0.9.0)
-  factory_girl_rails
+  factory_bot_rails
   fog-aws (~> 1.0)
   foreman
   foundation-rails (~> 6.3.0)

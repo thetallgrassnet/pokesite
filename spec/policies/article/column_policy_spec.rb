@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Article::ColumnPolicy do
 
-  let(:object)    { FactoryGirl.build(:article_column) }
-  let(:user)      { FactoryGirl.build(:admin_user) }
-  let(:superuser) { FactoryGirl.build(:admin_user, :superuser) }
+  let(:object)    { FactoryBot.build(:article_column) }
+  let(:user)      { FactoryBot.build(:admin_user) }
+  let(:superuser) { FactoryBot.build(:admin_user, :superuser) }
 
   subject { described_class }
 

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :article_post, class: 'Article::Post' do
     sequence(:headline) { |n| "Article #{n}" }
     subhead { headline }
