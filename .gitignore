@@ -32,3 +32,6 @@
 
 # Ignore uploads.
 /public/uploads
+/public/packs
+/public/packs-test
+/node_modules
