@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe EditorImagePolicy do
 
-  let(:object)    { FactoryGirl.build(:editor_image) }
-  let(:user)      { FactoryGirl.build(:admin_user) }
-  let(:superuser) { FactoryGirl.build(:admin_user, :superuser) }
+  let(:object)    { FactoryBot.build(:editor_image) }
+  let(:user)      { FactoryBot.build(:admin_user) }
+  let(:superuser) { FactoryBot.build(:admin_user, :superuser) }
 
   subject { described_class }
 

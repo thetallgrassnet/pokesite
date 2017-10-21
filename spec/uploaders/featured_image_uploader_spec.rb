@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe FeaturedImageUploader do
   include CarrierWave::Test::Matchers
 
-  let(:post)     { FactoryGirl.create(:article_post) }
+  let(:post)     { FactoryBot.create(:article_post) }
   let(:image)    { Rails.root.join('spec', 'support', 'assets', 'featured_image.png') }
   let(:uploader) { FeaturedImageUploader.new(post) }
 

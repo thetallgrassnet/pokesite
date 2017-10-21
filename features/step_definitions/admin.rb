@@ -1,9 +1,9 @@
 Given(/^an author$/) do
-  @admin_user = FactoryGirl.create :admin_user, :author
+  @admin_user = FactoryBot.create :admin_user, :author
 end
 
 Given(/^a column$/) do
-  FactoryGirl.create :article_column
+  FactoryBot.create :article_column
 end
 
 When(/^I sign in to admin$/) do
@@ -20,7 +20,7 @@ Then(/^I should have (\d+) columns? available/) do |n|
 end
 
 When(/^I fill in the article post form$/) do
-  post = FactoryGirl.build :article_post, column: @admin_user.article_columns.first
+  post = FactoryBot.build :article_post, column: @admin_user.article_columns.first
 
   fill_in 'Headline', with: post.headline
   fill_in 'Subhead', with: post.subhead

@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Article::Post, type: :model do
-  subject { FactoryGirl.build(:article_post) }
+  subject { FactoryBot.build(:article_post) }
 
   describe '.published' do
-    let!(:published_post)   { FactoryGirl.create(:article_post, :published) }
-    let!(:future_post)      { FactoryGirl.create(:article_post, :future_published) }
-    let!(:unpublished_post) { FactoryGirl.create(:article_post) }
+    let!(:published_post)   { FactoryBot.create(:article_post, :published) }
+    let!(:future_post)      { FactoryBot.create(:article_post, :future_published) }
+    let!(:unpublished_post) { FactoryBot.create(:article_post) }
 
     subject { Article::Post.published }
 
@@ -15,10 +15,10 @@ RSpec.describe Article::Post, type: :model do
   end
 
   describe '.featured' do
-    let!(:featured_post)             { FactoryGirl.create(:article_post, :published, :featured) }
-    let!(:future_featured_post)      { FactoryGirl.create(:article_post, :future_published, :featured) }
-    let!(:unpublished_featured_post) { FactoryGirl.create(:article_post, :featured) }
-    let!(:unfeatured_post)           { FactoryGirl.create(:article_post, :published) }
+    let!(:featured_post)             { FactoryBot.create(:article_post, :published, :featured) }
+    let!(:future_featured_post)      { FactoryBot.create(:article_post, :future_published, :featured) }
+    let!(:unpublished_featured_post) { FactoryBot.create(:article_post, :featured) }
+    let!(:unfeatured_post)           { FactoryBot.create(:article_post, :published) }
 
     subject { Article::Post.featured }
 
@@ -37,7 +37,7 @@ RSpec.describe Article::Post, type: :model do
     end
 
     context 'when not unique' do
-      let!(:post) { FactoryGirl.create(:article_post) }
+      let!(:post) { FactoryBot.create(:article_post) }
       before      { subject.assign_attributes(headline: post.headline) }
       it          { is_expected.not_to be_valid }
     end
@@ -99,13 +99,13 @@ RSpec.describe Article::Post, type: :model do
   end
 
   describe '#to_s' do
-    let(:post) { FactoryGirl.build(:article_post) }
+    let(:post) { FactoryBot.build(:article_post) }
     subject    { post.to_s }
     it         { is_expected.to eql(post.headline) }
   end
 
   describe '#excerpt' do
-    let(:post) { FactoryGirl.build(:article_post) }
+    let(:post) { FactoryBot.build(:article_post) }
     subject    { post.excerpt }
     it         { is_expected.to be_a(SirTrevorRails::Blocks::TextBlock) }
   end

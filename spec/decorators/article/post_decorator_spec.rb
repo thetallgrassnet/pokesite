@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Article::PostDecorator do
   include CarrierWave::Test::Matchers
 
-  let(:post) { FactoryGirl.build(:article_post).extend Article::PostDecorator }
+  let(:post) { FactoryBot.build(:article_post).extend Article::PostDecorator }
   subject    { post }
   it         { is_expected.to be_an(Article::Post) }
 

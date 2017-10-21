@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe EditorImageUploader do
   include CarrierWave::Test::Matchers
 
-  let(:editor_image) { FactoryGirl.create(:editor_image) }
+  let(:editor_image) { FactoryBot.create(:editor_image) }
   let(:uploader)     { editor_image.editor_image }
 
   before do

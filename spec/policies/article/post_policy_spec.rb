@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Article::PostPolicy do
 
-  let(:object)       { FactoryGirl.build(:article_post) }
+  let(:object)       { FactoryBot.build(:article_post) }
   let(:author)       { object.author }
-  let(:other_author) { FactoryGirl.build(:admin_user, :author) }
-  let(:user)         { FactoryGirl.build(:admin_user) }
-  let(:superuser)    { FactoryGirl.build(:admin_user, :superuser) }
+  let(:other_author) { FactoryBot.build(:admin_user, :author) }
+  let(:user)         { FactoryBot.build(:admin_user) }
+  let(:superuser)    { FactoryBot.build(:admin_user, :superuser) }
 
   subject { described_class }
 
