@@ -19,7 +19,7 @@
     "path-complete-extname": "^0.1.0",
     "postcss-loader": "^2.0.5",
     "postcss-smart-import": "^0.7.0",
-    "precss": "^2.0.0",
+    "precss": "^3.0.0",
     "rails-erb-loader": "^5.0.1",
     "sass-loader": "^6.0.5",
     "sir-trevor": "^0.6.5",
