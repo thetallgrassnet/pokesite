@@ -21,7 +21,7 @@
     "postcss-smart-import": "^0.7.0",
     "precss": "^2.0.0",
     "rails-erb-loader": "^5.0.1",
-    "sass-loader": "^6.0.5",
+    "sass-loader": "^7.0.2",
     "sir-trevor": "^0.6.5",
     "style-loader": "^0.19.0",
     "webpack": "^3.0.0",
